@@ -3,24 +3,32 @@ package ec504Group3;
 
 import ec504Group3.Checker.ScoreChecker;
 import ec504Group3.Crawler.URL2File;
+import ec504Group3.Crawler.URLListCreater;
+
 import java.io.*;
+import java.net.URL;
 
 public class test {
     public static void main (String[] args) throws IOException {
-        ScoreChecker sc = new ScoreChecker();
+        URLListCreater creater = new URLListCreater();
+        creater.create(new URL("https://www.rndsystems.com/cn"));
         String urlAddress = "src/ec504Group3/Resource/URL-list";
         FileInputStream inputStream = new FileInputStream(urlAddress);
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         String str = null;
+        URL2File uf = new URL2File();
+        ScoreChecker sc = new ScoreChecker();
+        int count=0;
         while((str = bufferedReader.readLine()) != null)
         {
-            System.out.println(str);
+            uf.StoreFile(str,count);
+            System.out.println(sc.check("src/ec504Group3/Resource/webFile/url-"+count+".txt"));
+            count++;
         }
         //close
         inputStream.close();
         bufferedReader.close();
-        URL2File uf = new URL2File();
-        uf.StoreFile("https://en.wikipedia.org/wiki/English_language",0);
-        System.out.println(sc.check("src/ec504Group3/Resource/webFile/url-0.txt"));
+
+
     }
 }
