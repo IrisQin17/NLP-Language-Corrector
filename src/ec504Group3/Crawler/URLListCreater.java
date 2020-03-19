@@ -1,4 +1,7 @@
 package ec504Group3.Crawler;
 
-public class URLListCreater implements crawler{
+import java.io.IOException;
+
+public class URLListCreater{
+
 }
