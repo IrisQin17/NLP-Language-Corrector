@@ -27,19 +27,7 @@ public class URLListCreater {
                 Matcher buf_m = p.matcher(buf);
                 while (buf_m.find()) {
                     String tmp = buf_m.group();
-                    System.out.println(tmp);
-                    URL uu = new URL(tmp);
-                    int flag=0;
-                    try{
-                        uu.openStream();
-                        System.out.println("~~~~");
-                    }catch (Exception e){
-                        System.out.println("++++");
-                        flag=1;
-                    }
-                    if (flag==1) break;
-                    urlSet.add(buf_m.group());
-
+                    urlSet.add(tmp);
                 }
             }
             for(String s:urlSet){
@@ -58,5 +46,14 @@ public class URLListCreater {
             pw.close();
         }
     }
-
+    public boolean validate (String tmp){
+        try{
+            URL uu = new URL(tmp);
+            InputStream in = uu.openStream();
+        }catch(Exception e1){
+            System.out.println("false");
+            return false;
+        }
+        return true;
+    }
 }

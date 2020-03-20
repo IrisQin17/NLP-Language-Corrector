@@ -21,7 +21,11 @@ public class test {
         int count=0;
         while((str = bufferedReader.readLine()) != null)
         {
-            uf.StoreFile(str,count);
+            try{
+                uf.StoreFile(str,count);
+            }catch (Exception e){
+                continue;
+            }
             System.out.println(sc.check("src/ec504Group3/Resource/webFile/url-"+count+".txt"));
             count++;
         }
