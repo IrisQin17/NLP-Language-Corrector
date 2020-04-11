@@ -16,7 +16,7 @@ public class CoreNLP {
         StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 
         // read some text in the text variable
-        String text = "What is the Weather in Boston right now?";
+        String text = "What is the Weather in Boston now?";
 
         // create an empty Annotation just with the given text
         Annotation document = new Annotation(text);
@@ -40,7 +40,6 @@ public class CoreNLP {
                 String ne = token.get(CoreAnnotations.NamedEntityTagAnnotation.class);
 
                 System.out.println(String.format("Print: word: [%s] pos: [%s] ne: [%s]", word, pos, ne));
-
             }
         }
     }
