@@ -49,7 +49,7 @@ public class Database {
     private Database() {
         BasicConfigurator.configure();
         Logger.getRootLogger().setLevel(Level.OFF);
-        db = new ArangoDB.Builder().host("127.0.0.1").user("root").password("").build().db(DATABASE);
+        db = new ArangoDB.Builder().host("127.0.0.1",8529).user("root").password("").build().db(DATABASE);
         ArangoGraph graph = db.graph(GRAPH);
         nodes = graph.vertexCollection(NODES);
         edges = graph.edgeCollection(EDGES);
