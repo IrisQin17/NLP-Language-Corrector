@@ -31,7 +31,7 @@ public class Database {
     private static ArangoCollection links;
     private static ArangoVertexCollection nodes;
     private static ArangoEdgeCollection edges;
-    private static final String DATABASE = "group3";
+    private static final String DATABASE = "myda";
     private static final String GRAPH = "bigrams";
     private static final String NODES = "words";
     private static final String EDGES = "freqs";
@@ -323,6 +323,7 @@ public class Database {
         }
         return updateEdge(edge);
     }
+
 
     /**
      * Gets a Bi-gram from the graph of the source and sink strings.

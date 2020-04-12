@@ -2,8 +2,7 @@ package ec504Group3;
 
 
 import ec504Group3.Checker.ScoreChecker;
-import ec504Group3.Crawler.URL2File;
-import ec504Group3.Crawler.URLListCreater;
+import ec504Group3.Crawler.*;
 
 import java.io.*;
 import java.net.URL;
@@ -32,7 +31,8 @@ public class test {
         //close
         inputStream.close();
         bufferedReader.close();
-
+        buildDict db = new buildDict();
+        db.build();
 
     }
 }
