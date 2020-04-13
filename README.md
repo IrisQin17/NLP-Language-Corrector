@@ -5,7 +5,7 @@ This project is to find the suspicious word or phrase in the whole text. There a
 
 “Checker” is to detect the suspicious phrase and sentences and difference value through comparing the difference between suspicious phrases and corresponding similar phrases in template.
 
-Excluded minimum requirements, there are some other possible features we can add into this project. Graphical User Interface Suggest reasonable corrections to suspicious phrases Crawl social media posts Allow human assessment of suspicious samples and non-trivially feed them back into the system. Extend to a language in which none of the team members have fluency
+Excluded minimum requirements, there are some other possible features we can add into this project: Graphical User Interface Suggest reasonable corrections to suspicious phrases Crawl social media posts. Allow human assessment of suspicious samples and non-trivially feed them back into the system. Extend to a language in which none of the team members have fluency.
 
 ## Group Members
 
@@ -22,14 +22,11 @@ Yuan Wei	(yuanwei@bu.edu)
 ## Implementation
 
 ### Crawler:
-
-Crawler:
-
-​	In our project,  the input is the path of file of URLs, to implement we use an original URL (which is “http://www.rndsystems.com/cn” in test) to fetch URLs in that URL web, and form a txt containing these URLs and then read each URL in URL-list.txt line-by-line which is stored locally in Resource Director.
+In our project, the input is the path of file of URLs, to implement we use an original URL (which is “http://www.rndsystems.com/cn” in test) to fetch URLs in that URL web, and form a txt containing these URLs and then read each URL in URL-list.txt line-by-line which is stored locally in Resource Director.
 
 For each URL, use crawler fetch the corresponding web content into local file, and name the file with each URL’s index in URL-list.txt.All the inter local stored files will be stored in local Resource directory.There is an interface named “crawler.java”, “URL2File.java” implements this interface and overrides the function of “StoreFile” whose input is a specific string representing URL.
 
-​    In the first step, correct english language content is read in and stored into our data storage which is a directed graphThen in the step of calling checker, checker will read and parse the content of a specific file, find the corresponding words and phrases in graph, and check their neighbors. Finally the checker will give out the score.
+​In the first step, correct english language content is read in and stored into our data storage which is a directed graphThen in the step of calling checker, checker will read and parse the content of a specific file, find the corresponding words and phrases in graph, and check their neighbors. Finally the checker will give out the score.
 
 
 
@@ -48,8 +45,21 @@ All of our reasult is store in a List `List<List<tokenType>> result`
 
 For now, we support German, Spanish, French(which none of the team members have fluency), Chinese and English.
 ### Database:
-![image](img/graph.png)
+![pos_graph](img/graph.png)
 
+![pos_tag](img/pos.png)
+1. First, we decided to use Graph to record the relationship of each part of speech. 
+
+2. Each Node will store a unique part of speech, and the weight of node is the total number of edges from this node to other nodes.
+
+3. Each edge will contains its start and end, which shows the relationship of 2 adjacent part of speech in the sentence. Besides, the weight of edge means the total number of this relation appearing in dictionary.
+
+4. According to above illustration, we need the database to store the graph, so we use ArangoDB for our project, which has APIs for Graph
+
+5. Some important functions in database:
+- getAllEdges(): get all edges stored in graph
+- getNodeEdges(String pos): get all edges from the node which stores target part of speech.
+- EdgePutin(String fromPos, String toPos): If there is no edge exists in Graph, it will insert the corresponding node the edges with weight 1. Otherwise, it will update the present node's and edge's weight with "+1".
 
 ### Checker:
 

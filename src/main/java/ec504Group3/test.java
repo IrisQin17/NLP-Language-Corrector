@@ -31,8 +31,8 @@ public class test {
         //close
         inputStream.close();
         bufferedReader.close();
-//        buildDict db = new buildDict();
-//        db.build();
+        buildDict db = new buildDict();
+        db.build();
         System.out.println("--finish--");
         System.exit(0);
     }
