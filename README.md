@@ -45,21 +45,22 @@ All of our reasult is store in a List `List<List<tokenType>> result`
 
 For now, we support German, Spanish, French(which none of the team members have fluency), Chinese and English.
 ### Database:
-![pos_graph](img/graph.png)
 
 ![pos_tag](img/pos.png)
-1. First, we decided to use Graph to record the relationship of each part of speech. 
+1. First, we decided to use Graph to record the relationship of each PART OF SPEECH. 
 
 2. Each Node will store a unique part of speech, and the weight of node is the total number of edges from this node to other nodes.
 
 3. Each edge will contains its start and end, which shows the relationship of 2 adjacent part of speech in the sentence. Besides, the weight of edge means the total number of this relation appearing in dictionary.
 
-4. According to above illustration, we need the database to store the graph, so we use ArangoDB for our project, which has APIs for Graph
+4. According to above illustration, we need the database to store the graph, so we use ArangoDB for our project, which has APIs for Graph。
 
 5. Some important functions in database:
 - getAllEdges(): get all edges stored in graph
 - getNodeEdges(String pos): get all edges from the node which stores target part of speech.
 - EdgePutin(String fromPos, String toPos): If there is no edge exists in Graph, it will insert the corresponding node the edges with weight 1. Otherwise, it will update the present node's and edge's weight with "+1".
+
+This is the visualized figure of the graph data structure we built:![pos_graph](img/graph.png) 
 
 ### Checker:
 
