@@ -21,11 +21,11 @@
         </constraints>
         <properties>
           <background color="-1"/>
-          <disabledTextColor color="-4801605"/>
+          <disabledTextColor color="-11184811"/>
           <editable value="false"/>
           <enabled value="false"/>
           <font size="16" style="2"/>
-          <foreground color="-3618616"/>
+          <foreground color="-11184811"/>
           <margin top="10" left="10" bottom="10" right="10"/>
           <opaque value="true"/>
           <text value="&#10;Waiting for inputs in the correct format, e.g.: &#10;&#10;Input PATH OF FILE OF URLs like this:&#10;ec504Group3/Resource/URL-list&#10;&#10;Input PATH OF FILE TO CHECK like this:&#10;external/taggers/input/english-input.txt"/>
