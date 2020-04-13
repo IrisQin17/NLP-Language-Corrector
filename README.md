@@ -81,6 +81,8 @@ The file data content is transferred to token information using API. Then each t
 
 ![image](img/ui.png)
 
+![image](img/ui2.png)
+
 GUI now is currently online.
 
 As it show in our graph above, we offer the PATH of the URL files and  PATH of File which we'd like to check.The input path would be pass to the crawler.class  to get the URL and generate the text file.
