@@ -35,7 +35,7 @@ Pre-conditions
             rm ~/Library/LaunchAgents/homebrew.mxcl.arangodb.plist
             If the latest ArangoDB version is not shown in Homebrew, you also need to update Homebrew executing the command brew update.
 
-        Windows:
+        Windows: 
             please follow the instructions on the website:
                 https://www.arangodb.com/docs/stable/installation-windows.html
 
