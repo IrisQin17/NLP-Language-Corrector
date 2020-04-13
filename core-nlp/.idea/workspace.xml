@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ec714723-20a3-427e-af44-b7773cc1e49e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/TaggerDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/TaggerDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/data/enclitic-inflections.data" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/input/chinese-input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/input/sample-input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/input/sample-output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/README-Models.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/arabic-train.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/arabic-train.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/arabic.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/arabic.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/chinese-distsim.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/chinese-distsim.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/chinese-nodistsim.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/chinese-nodistsim.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/english-bidirectional-distsim.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/english-bidirectional-distsim.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/english-caseless-left3words-distsim.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/english-caseless-left3words-distsim.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/english-left3words-distsim.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/english-left3words-distsim.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/french-ud.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/french-ud.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/french.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/french.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/german-fast-caseless.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/german-fast-caseless.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/german-fast.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/german-fast.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/german-hgc.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/german-hgc.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/german-ud.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/german-ud.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/spanish-distsim.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/spanish-distsim.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/spanish-ud.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/spanish-ud.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/spanish.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/spanish.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/wsj-0-18-bidirectional-distsim.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/wsj-0-18-bidirectional-distsim.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/wsj-0-18-bidirectional-nodistsim.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/wsj-0-18-bidirectional-nodistsim.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/wsj-0-18-caseless-left3words-distsim.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/wsj-0-18-caseless-left3words-distsim.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/wsj-0-18-left3words-distsim.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/wsj-0-18-left3words-distsim.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/wsj-0-18-left3words-nodistsim.tagger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/models/wsj-0-18-left3words-nodistsim.tagger.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/stanford-postagger-3.9.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/stanford-postagger-3.9.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/stanford-postagger-3.9.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/stanford-postagger-gui.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/stanford-postagger-gui.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/stanford-postagger.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/stanford-postagger.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/taggers/stanford-postagger.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/TaggerDemo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/TaggerDemo2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-nlp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CoreNLP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CoreNLP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CoreNLP.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CoreNLP.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../group3" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="hideWarnings" value="true" />
+    <option name="HIDE_WARNINGS" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Tag Library Descriptor" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZNE2b8VJIwqZd053JC1QQCmNzw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/taggers" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/taggers/input" />
+      <recent name="$PROJECT_DIR$/src/taggers/data" />
+      <recent name="$PROJECT_DIR$/target/classes" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/taggers" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.CoreNLP">
+    <configuration name="CoreNLP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CoreNLP" />
+      <module name="core-nlp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaggerDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TaggerDemo" />
+      <module name="core-nlp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaggerDemo2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TaggerDemo2" />
+      <module name="core-nlp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.CoreNLP" />
+      <item itemvalue="Application.TaggerDemo" />
+      <item itemvalue="Application.TaggerDemo2" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CoreNLP" />
+        <item itemvalue="Application.TaggerDemo" />
+        <item itemvalue="Application.TaggerDemo2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec714723-20a3-427e-af44-b7773cc1e49e" name="Default Changelist" comment="" />
+      <created>1584670944854</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584670944854</updated>
+      <workItem from="1584670946050" duration="807000" />
+      <workItem from="1584680907339" duration="1331000" />
+      <workItem from="1586565163087" duration="527000" />
+      <workItem from="1586565798163" duration="134000" />
+      <workItem from="1586569975453" duration="864000" />
+      <workItem from="1586634343536" duration="394000" />
+      <workItem from="1586636984385" duration="1516000" />
+      <workItem from="1586639459376" duration="6846000" />
+      <workItem from="1586647540851" duration="688000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
