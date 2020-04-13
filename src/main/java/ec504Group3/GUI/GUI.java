@@ -162,13 +162,13 @@ public class GUI {
                 url_Input.setText(null);
                 test_Input.setText(null);
                 textField.setText("\n" +
-                        "Waiting for inputs in the correct format, e.g.: \n" +
+                        "Waiting for inputs in the correct format, e.g.:\n" +
                         "\n" +
                         "Input PATH OF FILE OF URLs like this:\n" +
-                        "src/main/java/ec504Group3/Resource/URL-list\n" +
+                        "/PATH/TO/URL-list\n" +
                         "\n" +
                         "Input PATH OF FILE TO CHECK like this:\n" +
-                        "external/taggers/input/english-input.txt");
+                        "/PATH/TO/check-0.txt");
             }
         });
 

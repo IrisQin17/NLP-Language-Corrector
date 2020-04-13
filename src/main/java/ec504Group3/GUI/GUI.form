@@ -30,7 +30,7 @@
           <margin top="10" left="10" bottom="10" right="10"/>
           <opaque value="true"/>
           <rows value="0"/>
-          <text value="Waiting for inputs in the correct format, e.g.:                                Input PATH OF FILE OF URLs like this: src/main/java/ec504Group3/Resource/URL-list                        Input PATH OF FILE TO CHECK like this: external/taggers/input/english-input.txt"/>
+          <text value="&#10;Waiting for inputs in the correct format, e.g.:&#10;&#10;Input PATH OF FILE OF URLs like this:&#10;/PATH/TO/URL-list&#10;&#10;Input PATH OF FILE TO CHECK like this:&#10;/PATH/TO/check-0.txt"/>
           <wrapStyleWord value="true"/>
         </properties>
       </component>
