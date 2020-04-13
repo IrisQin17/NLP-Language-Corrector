@@ -48,15 +48,21 @@ all of our reasult is store in a List `List<List<tokenType>> result`
 
 ### Database:
 
-<img src="/Users/yuanwei/Library/Application Support/typora-user-images/image-20200412225514408.png" alt="image-20200412225514408" style="zoom:50%;" />
+
 
 ### Checker:
 
 
 
-### Graph User Interface
+### Graph User Interface:
 
+![image](https://agile.bu.edu/bitbucket/projects/EP/repos/group3/browse/img/UI.png)
 
+*NOTE: the GUI now is temporaly offline, since we haven't deal with thread issues.
+
+As it show in our graph above, we offer the PATH of the URL files and  PATH of File which we'd like to check.The input path would be pass to the crawler.class  to get the URL and generate the text file.
+
+Three language detect options are offered in our project. For each language we select, a different model would be applied for analysis. 
 
 
 
