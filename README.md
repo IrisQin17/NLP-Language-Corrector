@@ -1,6 +1,5 @@
 # Documentation
 ## Problem Description
-
 This project is to find the suspicious word or phrase in the whole text. There are two main parts, “Crawler” and “Checker”. “Crawler” is a function to read the correct text (at most 1GB) and store the common usage patterns of words and phrases as the template.
 
 “Checker” is to detect the suspicious phrase and sentences and difference value through comparing the difference between suspicious phrases and corresponding similar phrases in template.
@@ -13,7 +12,7 @@ Ting Zhang
 
 Bowen Qin   (bwqin@bu.edu)
 
-Ganghao Li
+Ganghao Li  (lighao@bu.edu)
 
 Hao Zuo
 
@@ -120,10 +119,10 @@ Explanation: A system for automatic English grammatical error correction.
 
 #### Bowen Qin:
 - Worked on Tokenizer: Learning Stanford CoreNLP API and deployed its environment using Maven. Successfully developed tokenizer that support German, Spanish, French(which none of the team members have fluency), Chinese and English.
-
 - GUI design and improvement: Using Swing UI Designer.
 #### Ganghao Li:
-
+- Mainly working on design Data Structure and implement the code of database. 
+- Also join the design of modeling about calculate the score in check.java.
 #### Hao Zuo:
 
 #### Yuan Wei:
