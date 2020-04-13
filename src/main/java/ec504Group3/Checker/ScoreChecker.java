@@ -15,15 +15,16 @@ public class ScoreChecker{
     public static MaxentTagger chineseTagger = new MaxentTagger("external/taggers/models/chinese-distsim.tagger");
     public static MaxentTagger frenchTagger = new MaxentTagger("external/taggers/models/french.tagger");
 
-    public int check(String checkFile) throws Exception {
+    public String check(String checkFile) throws Exception {
         int score  = 0;
         List<List<TokenType>> tokens;
         try{
             tokens = Tokenizer.getTokens(englishTagger,checkFile);
         }catch (IOException e){
-            return -1;
+            return "";
         }
         float maintain = 0;
+        StringBuilder res = new StringBuilder();
         for (List<TokenType> token : tokens) {
             int tmp_score=0;
             StringBuilder sentence = new StringBuilder();
@@ -39,14 +40,14 @@ public class ScoreChecker{
                 ratio = (float)edge_freq / (float)node_freq;
                 if (ratio<0.01){
                     tmp_score = tmp_score>=100?tmp_score:tmp_score+10;
-                    System.out.println(from.getPos()+" to "+to.getPos()+" : "+ (int)(100 *(1-ratio)));
+                    res.append(from.getPos()).append(" to ").append(to.getPos()).append(" : ").append((int)(100 *(1-ratio))).append("\n");
                 }else if (ratio>0.6){
-                    System.out.println(from.getPos()+" to "+to.getPos()+" : "+ 0);
+                    res.append(from.getPos()).append(" to ").append(to.getPos()).append(" : ").append(0).append("\n");
                 }
             }
             sentence.append(token.get(token.size()-1).word).append(" ");
-            System.out.println("{"+sentence.toString()+"} score: "+tmp_score);
+            res.append("{").append(sentence.toString()).append("} score: ").append(tmp_score).append("\n");
         }
-        return score;
+        return res.toString();
     }
 }
