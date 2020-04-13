@@ -10,9 +10,13 @@ import ec504Group3.Tokenizer.*;
 import ec504Group3.Database.*;
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 
+import javax.xml.crypto.Data;
+
 
 public class buildDict {
     public static MaxentTagger englishTagger = new MaxentTagger("external/taggers/models/english-bidirectional-distsim.tagger");
+    public static MaxentTagger germanTagger = new MaxentTagger("external/taggers/models/german-fast.tagger");
+    public static MaxentTagger spanishTagger = new MaxentTagger("external/taggers/models/spanish.tagger");
     public static MaxentTagger chineseTagger = new MaxentTagger("external/taggers/models/chinese-distsim.tagger");
     public static MaxentTagger frenchTagger = new MaxentTagger("external/taggers/models/french.tagger");
     public void build() throws Exception {
@@ -53,7 +57,8 @@ public class buildDict {
         for (Edge e:edgeList){
             System.out.println(e.getKey()+" "+e.getFrequency()+" in "+FileCount);
         }
-        System.out.println("jj"+jjc);
+        long compare = Database.getDatabase().getNode("JJ").getNodeNum();
+        System.out.println("jj"+jjc+" and "+compare);
 
 
     }

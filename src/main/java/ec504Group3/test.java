@@ -2,7 +2,7 @@ package ec504Group3;
 
 import ec504Group3.Checker.ScoreChecker;
 import ec504Group3.Crawler.*;
-
+import ec504Group3.GUI.*;
 import java.io.*;
 import java.net.URL;
 
@@ -24,14 +24,15 @@ public class test {
             }catch (Exception e){
                 continue;
             }
-            System.out.println(sc.check("src/main/java/ec504Group3/Resource/webFile/url-"+count+".txt"));
+
             count++;
         }
+        System.out.println(sc.check("src/main/java/ec504Group3/Resource/CheckFile/check-0.txt"));
         //close
         inputStream.close();
         bufferedReader.close();
-        buildDict db = new buildDict();
-        db.build();
+//        buildDict db = new buildDict();
+//        db.build();
         System.out.println("--finish--");
         System.exit(0);
     }

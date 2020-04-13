@@ -16,7 +16,7 @@ public class GUI {
     private JButton resetButton;
     private JFormattedTextField test_Input;
     private boolean EnglishSelected, ChineseSelected, FrenchSelected = false;
-    public String crawlerInput ="URL-list";
+    public String crawlerInput = "";
     public String checkerInput;
 
     public GUI() {
@@ -27,8 +27,10 @@ public class GUI {
                     textField.setText("plz filling both input");
                     return;
                 }
+
                 String inputCom = url_Input.getText();
                 crawlerInput = url_Input.getText();
+                System.out.println(crawlerInput);
                 textField.setText(inputCom);
                 inputCom += "\n"+test_Input.getText();
                 checkerInput = test_Input.getText();
@@ -84,7 +86,7 @@ public class GUI {
         return;
     }
 
-    public static void main(String[] args) {
+    public void run() {
         JFrame frame = new JFrame("GUI");
         frame.setContentPane(new GUI().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

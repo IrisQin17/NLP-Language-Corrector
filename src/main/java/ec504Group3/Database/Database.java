@@ -3,8 +3,6 @@ package ec504Group3.Database;
 import com.arangodb.*;
 import com.arangodb.entity.BaseDocument;
 import com.arangodb.entity.BaseEdgeDocument;
-import com.arangodb.entity.CollectionEntity;
-import com.arangodb.entity.CollectionPropertiesEntity;
 import com.arangodb.model.EdgeCreateOptions;
 import com.arangodb.model.EdgeUpdateOptions;
 import com.arangodb.model.VertexCreateOptions;
@@ -13,11 +11,8 @@ import com.arangodb.util.MapBuilder;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.jsoup.Connection;
 
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Database {
 
@@ -55,14 +50,13 @@ public class Database {
         while (cursor.hasNext()) {
             docs.add((BaseDocument) cursor.next());
         }
-        Node node = new Node(pos);
+
         List<Edge> allEdges = new ArrayList<>();
         for (BaseDocument document : docs) {
             String nodeChild;
-            String[] childArr = document.getKey().split("\\_");
+            String[] childArr = document.getKey().split("!");
             nodeChild = childArr[1];
-            Node newNode = new Node(nodeChild);
-            allEdges.add(new Edge(node, newNode, (Long) document.getAttribute("frequency")));
+            allEdges.add(new Edge(getNode(pos), getNode(nodeChild), (Long) document.getAttribute("frequency")));
         }
         return allEdges;
     }
@@ -81,29 +75,29 @@ public class Database {
         for (BaseDocument document : docs) {
             String nodeChild;
             String nodeParent;
-            String[] childArr = document.getKey().split("\\_");
+            String[] childArr = document.getKey().split("!");
 
             nodeParent = childArr[0];
             nodeChild = childArr[1];
 
-            Node parentNode = new Node(nodeParent);
-            Node newNode = new Node(nodeChild);
+//            Node parentNode = new Node(nodeParent,);
+//            Node newNode = new Node(nodeChild);
 
-            allEdges.add(new Edge(parentNode, newNode, (Long) document.getAttribute("frequency")));
+            allEdges.add(new Edge(getNode(nodeParent), getNode(nodeChild), (Long) document.getAttribute("frequency")));
         }
         return allEdges;
 
     }
 
-    private Node getNode(String pos) {
+    public Node getNode(String pos) {
         BaseDocument node = nodes.getVertex(pos, BaseDocument.class);
         if (node == null) return null;
-        return new Node((String) node.getAttribute("pos"));
+        return new Node((String) node.getAttribute("pos"), (Long) node.getAttribute("nodeNum"));
     }
 
-    private boolean insertNode(String pos) {
+    private boolean insertNode(String pos, long nodeNum) {
         try {
-            nodes.insertVertex(new Node(pos).getDocument(), new VertexCreateOptions());
+            nodes.insertVertex(new Node(pos, nodeNum).getDocument(), new VertexCreateOptions());
             return true;
         } catch (ArangoDBException err) {
             return false;
@@ -113,17 +107,17 @@ public class Database {
     public boolean NodePutin(String pos) {
         Node node = getNode(pos);
         if (node == null) {
-            return insertNode(pos);
+            return insertNode(pos, 1);
 
         }
         return true;
     }
 
-    private Edge getEdge(Node from, Node to) {
-        if(edges.getEdge(from.getPos() + "_" + to.getPos(), BaseEdgeDocument.class) == null){
+    public Edge getEdge(Node from, Node to) {
+        if(edges.getEdge(from.getPos() + "!" + to.getPos(), BaseEdgeDocument.class) == null){
             return null;
         }
-        BaseEdgeDocument edge = edges.getEdge(from.getPos() + "_" + to.getPos(), BaseEdgeDocument.class);
+        BaseEdgeDocument edge = edges.getEdge(from.getPos() + "!" + to.getPos(), BaseEdgeDocument.class);
         return new Edge(from, to, (Long) edge.getAttribute("frequency"));
     }
 
@@ -156,24 +150,38 @@ public class Database {
 //        return node;
 //    }
 
-    public boolean EdgePutin(String fromPos, String toPos) {
+    private boolean incrementNode(Node node) {
+        try {
+            node.nodeNumPlus();
+            nodes.updateVertex(node.getPos(), node, new VertexUpdateOptions());
+            return true;
+        } catch (ArangoDBException err) {
+            return false;
+        }
+    }
+
+    public void EdgePutin(String fromPos, String toPos) {
         Node fromNode = getNode(fromPos);
         Node toNode = getNode(toPos);
         if (fromNode==null){
-            insertNode(fromPos);
+            insertNode(fromPos,0);
             fromNode = getNode(fromPos);
         }
         if (toNode==null){
-            insertNode(toPos);
+            insertNode(toPos,0);
             toNode = getNode(toPos);
         }
         Edge edge = getEdge(fromNode, toNode);
         if (edge == null) {
-            return insertEdge(fromNode, toNode);
+            insertEdge(fromNode, toNode);
+            return;
         }
-        return updateEdge(edge);
+        if (incrementNode(fromNode)) {
+            updateEdge(edge);
+        }
     }
 
 }
+
 
 

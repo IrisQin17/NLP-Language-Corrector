@@ -18,6 +18,8 @@ public class Tokenizer {
 
   /**  Tokenizer  */
   public static MaxentTagger englishTagger = new MaxentTagger("external/taggers/models/english-bidirectional-distsim.tagger");
+  public static MaxentTagger germanTagger = new MaxentTagger("external/taggers/models/german-fast.tagger");
+  public static MaxentTagger spanishTagger = new MaxentTagger("external/taggers/models/spanish.tagger");
   public static MaxentTagger chineseTagger = new MaxentTagger("external/taggers/models/chinese-distsim.tagger");
   public static MaxentTagger frenchTagger = new MaxentTagger("external/taggers/models/french.tagger");
 

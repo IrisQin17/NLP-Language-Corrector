@@ -27,7 +27,7 @@ public class Edge {
     }
 
     public String getKey() {
-        return this.from.getPos() + "_" + this.to.getPos();
+        return this.from.getPos() + "!" + this.to.getPos();
     }
 
     public void incrementFrequency() {
