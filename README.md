@@ -152,8 +152,9 @@ Design the project structure and coordinate between each part of project with co
 4) Simple crawler-database-checker connection test implementation and system debug.
 
 #### Bowen Qin:
-- Worked on Tokenizer: Learning Stanford CoreNLP API and deployed its environment using Maven. Successfully developed tokenizer that support German, Spanish, French(which none of the team members have fluency), Chinese and English.
-- GUI improvement and core algorithm connection: Using Swing UI Designer.
+- Worked on Tokenizer: Learning Stanford CoreNLP API and deployed its environment using Maven. 
+- Successfully developed tokenizer that support German, Spanish, French(which none of the team members have fluency), Chinese and English.
+- GUI improvement and core algorithm connection: Using Swing UI Designer to optimize the appearance of the GUI, and connect it to the core algorithm we built by receiving input and show output. 
 
 #### Ganghao Li:
 - Mainly working on design Data Structure and implement the code of database. 
