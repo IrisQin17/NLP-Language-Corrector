@@ -1,7 +1,43 @@
 Pre-conditions
 - Hardware, peripherals, and operating system needed to run your code.
-    - All code should run on our lab computers, unless you have an exemption from the instructor.
-    - If some of your features work more efficiently on specific hardware, please explain this here.
+    -Database
+        For Mac OS:
+            Homebrew
+            When installing ArangoDB via the macOS package manager Homebrew, only the Community Edition is available.
+
+            The Homebrew installation is updated a few days after the official release of a new version.
+
+            If you are using homebrew, then you can install the latest released stable version of ArangoDB using brew as follows:
+
+            brew install arangodb
+            This will install the current stable version of ArangoDB and all dependencies within your Homebrew tree. Note that the server will be installed as:
+
+            /usr/local/Cellar/arangodb/<VERSION>/sbin/arangod
+            <VERSION> is a placeholder for the actual version number, e.g. 3.5.0.
+
+            You can start the server by running the command:
+
+            /usr/local/Cellar/arangodb/<VERSION>/sbin/arangod &
+            Configuration file is located at:
+
+            /usr/local/etc/arangodb3/arangod.conf
+            The ArangoDB shell will be installed as:
+
+            /usr/local/Cellar/arangodb/<VERSION>/bin/arangosh
+            You can uninstall ArangoDB using:
+
+            brew uninstall arangodb
+            However, in case you started ArangoDB using the launchctl, you need to unload it before uninstalling the server:
+
+            launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.arangodb.plist
+            Then remove the LaunchAgent:
+
+            rm ~/Library/LaunchAgents/homebrew.mxcl.arangodb.plist
+            If the latest ArangoDB version is not shown in Homebrew, you also need to update Homebrew executing the command brew update.
+
+    Windows:
+        please follow the instructions on the website:
+            https://www.arangodb.com/docs/stable/installation-windows.html
 
 Supporting files
 - A list of non-standard libraries needed for your project to run, including:
