@@ -25,24 +25,27 @@ public class ScoreChecker{
         }
         float maintain = 0;
         for (List<TokenType> token : tokens) {
+            int tmp_score=0;
+            StringBuilder sentence = new StringBuilder();
             for (int i=0;i<token.size()-1;i++) {
+                sentence.append(token.get(i).word).append(" ");
                 Node from = Database.getDatabase().getNode(token.get(i).pos);
                 Node to = Database.getDatabase().getNode(token.get(i+1).pos);
                 Edge e = Database.getDatabase().getEdge(from,to);
-                long edge_freq = e.getFrequency();
+                float ratio;
+                long edge_freq;
+                edge_freq = e==null?0:e.getFrequency();
                 long node_freq = from.getNodeNum();
-                float ratio = (float)edge_freq / (float)node_freq;
-                System.out.println(edge_freq+" chuyi "+node_freq);
-                if (ratio<0.05){
-                    maintain = maintain==0?ratio:maintain*ratio;
+                ratio = (float)edge_freq / (float)node_freq;
+                if (ratio<0.01){
+                    tmp_score = tmp_score>=100?tmp_score:tmp_score+10;
                     System.out.println(from.getPos()+" to "+to.getPos()+" : "+ (int)(100 *(1-ratio)));
                 }else if (ratio>0.6){
                     System.out.println(from.getPos()+" to "+to.getPos()+" : "+ 0);
                 }
-
             }
+            System.out.println("{"+sentence.toString()+"} score: "+tmp_score);
         }
-        score = (int) (100 *(1-maintain));
         return score;
     }
 }
