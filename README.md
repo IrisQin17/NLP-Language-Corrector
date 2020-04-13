@@ -61,11 +61,20 @@ Software Tool: Open-source Database ArangoDB which supports the functions of cre
 - getAllEdges(): get all edges stored in graph. This function is used for checker.
 - getNodeEdges(String pos): get all edges from the node which stores target part of speech. This function is used for checker.
 - GetEdge(Node from, Node to): get the specific edge in graph that satrting from Node "from" to Node "to". This function is used for checker.
-- EdgePutin(String fromPos, String toPos): If there is no edge exists in Graph, it will insert the corresponding node.
+- EdgePutin(String fromPos, String toPos): If there is no edge exists in Graph, it will insert the corresponding node the edges with weight 1. Otherwise, it will update the present node's and edge's weight with "+1". This function is used for crawler.
 
 This is the visualized figure of the graph data structure we built:![pos_graph](img/graph.png) 
 
+#### Database - Crawler
+1. When we read each file produced by crawler fro each URL, we first transfer them to different tokens according to their performance result in NLP.api. Then based on these api results, we get to know their pos tags for each words in each sentence. Then we add each word-pair which contains two consecutive words in sentence to the graph database.
+2. In our test, we pull out 15 URL files and dump them in the local project place. Then after processing on these files, we keep updating the nodes and edges in graph, which can our dictionary later.
+
+#### Database - Checker
+1. We currently have one check file and we produced some little mistakes in several sentences in the check file. Similar as what we did in the database-crawler process, we transfer the file content in the check file to token lists by using NLP.api. Then we analyze the seperate score of each token pair and accumulate score of the whole sentence.
+
+
 ### Checker:
+The file data content is transferred to token information using API. Then each token pair in the token list will be searched among the graph. We only use the pos tag of the token, thus the edge representing the pos tag pair is searched in the graph. If no edge is found, then the pair directly get 100 suspicion score. If the edge is found, we compute the ratio of edge weight (frequency) dividing from_node weight (frequency). Then this ratio is compared to some threshold we have difined in the model, if it is lees than threshold, we mark this pair as suspected pair, which means we need to gives it some suspicion score. Each time we meet some suspected pair phrase, we add some weighted score to the final score of the sentence. Then for each sentence in the check file, we willl get a corresponding score for suspicion.
 
 
 
