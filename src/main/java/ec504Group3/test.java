@@ -27,12 +27,14 @@ public class test {
 
             count++;
         }
-        System.out.println(sc.check("src/main/java/ec504Group3/Resource/CheckFile/check-0.txt"));
+
         //close
         inputStream.close();
         bufferedReader.close();
-//        buildDict db = new buildDict();
-//        db.build();
+        buildDict db = new buildDict();
+        db.build();
+        System.out.println(sc.check("src/main/java/ec504Group3/Resource/CheckFile/check-0.txt"));
+
         System.out.println("--finish--");
         System.exit(0);
     }
