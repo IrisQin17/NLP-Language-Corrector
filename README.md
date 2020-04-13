@@ -81,6 +81,8 @@ The file data content is transferred to token information using API. Then each t
 
 ![image](img/ui.png)
 
+![image](img/ui2.png)
+
 GUI now is currently online.
 
 As it show in our graph above, we offer the PATH of the URL files and  PATH of File which we'd like to check.The input path would be pass to the crawler.class  to get the URL and generate the text file.
@@ -143,7 +145,6 @@ Explanation: A system for automatic English grammatical error correction.
 
 ## Work breakdown
 #### Ting Zhang:
-Ting Zhang:
 Design the project structure and coordinate between each part of project with correct packages. I mainly focus on database design and implementation, checker algorithm design and implementation, crawler-database-checker linkage and test implementation. Tasks included: 
 1) ArangoDB installation and usage. 
 2) Graph database node & edge functions implementation and debug. 

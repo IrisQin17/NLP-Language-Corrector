@@ -109,7 +109,6 @@ public class GUI {
 
                 textField.setText(textField.getText() + "\n--finish--");
                 System.out.println("--finish--");
-                System.exit(0);
             }
         });
 
