@@ -44,10 +44,11 @@ The tokenzier should standerlize the input with:
 
 In our project, we created a class named "tokenType" which contains the elements we mentioned. Words are added with pos. The POS are get from Stanford NLP API using its trained model. 
 
-all of our reasult is store in a List `List<List<tokenType>> result`
+All of our reasult is store in a List `List<List<tokenType>> result`
 
+For now, we support German, Spanish, French(which none of the team members have fluency), Chinese and English.
 ### Database:
-
+![image](img/graph.png)
 
 
 ### Checker:
@@ -56,7 +57,7 @@ all of our reasult is store in a List `List<List<tokenType>> result`
 
 ### Graph User Interface:
 
-![image](https://agile.bu.edu/bitbucket/projects/EP/repos/group3/browse/img/UI.png)
+![image](img/UI.png)
 
 *NOTE: the GUI now is temporaly offline, since we haven't deal with thread issues.
 
