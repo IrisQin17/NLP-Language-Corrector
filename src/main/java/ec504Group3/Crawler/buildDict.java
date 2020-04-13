@@ -45,9 +45,15 @@ public class buildDict {
             FileCount++;
         }
         List<Edge> edgeList = Database.getDatabase().getALLEdges();
+        List<Edge> jjlist = Database.getDatabase().getNodeEdges("JJ");
+        int jjc=0;
+        for (Edge jj:jjlist){
+            jjc+=jj.getFrequency();
+        }
         for (Edge e:edgeList){
             System.out.println(e.getKey()+" "+e.getFrequency()+" in "+FileCount);
         }
+        System.out.println("jj"+jjc);
 
 
     }

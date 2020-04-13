@@ -47,7 +47,6 @@ public class Database {
 
     public List<Edge> getNodeEdges(String pos) {
         Map<String, Object> bindVars = new MapBuilder().get();
-
         String query;
         query = "FOR e IN " + EDGES + " FILTER e._from == \"words/"  + pos + "\" SORT e.frequency DESC, e._from, e._to RETURN e";
         ArangoCursor cursor;
