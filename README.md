@@ -47,7 +47,16 @@ In our project, we created a class named "tokenType" which contains the elements
 all of our reasult is store in a List `List<List<tokenType>> result`
 
 ### Database:
+
+<img src="/Users/yuanwei/Library/Application Support/typora-user-images/image-20200412225514408.png" alt="image-20200412225514408" style="zoom:50%;" />
+
 ### Checker:
+
+
+
+### Graph User Interface
+
+
 
 
 
