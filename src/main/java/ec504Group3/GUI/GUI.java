@@ -2,14 +2,12 @@ package ec504Group3.GUI;
 
 import ec504Group3.Checker.ScoreChecker;
 import ec504Group3.Crawler.URL2File;
-import ec504Group3.Crawler.URLListCreater;
 import ec504Group3.Crawler.buildDict;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.net.URL;
 
 public class GUI {
     private JPanel panel1;
@@ -34,11 +32,13 @@ public class GUI {
         enterButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                textField.setText("Processing...");
                 if(url_Input.getText().equals(null) || url_Input.getText().equals("") ||test_Input.getText().equals(null) || test_Input.getText().equals("") ){
-                    textField.setText("Please fill out both inputs!");
+                    textField.setText("Please fill out both inputs in correct format!");
                     return;
                 }
 
+                textField.setText(textField.getText() + "\nCrawling...");
 
 
                 String urlAddress = url_Input.getText();
@@ -48,6 +48,7 @@ public class GUI {
                     inputStream = new FileInputStream(urlAddress);
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
+                    textField.setText("Please fill out both inputs in correct format!");
                 }
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 String str = null;
@@ -60,6 +61,7 @@ public class GUI {
                         if (!((str = bufferedReader.readLine()) != null)) break;
                     } catch (IOException ex) {
                         ex.printStackTrace();
+                        textField.setText("Please fill out both inputs in correct format!");
                     }
                     try{
                         uf.StoreFile(str,count);
@@ -75,38 +77,39 @@ public class GUI {
                     inputStream.close();
                 } catch (IOException ex) {
                     ex.printStackTrace();
+                    textField.setText("Please fill out both inputs in correct format!");
                 }
                 try {
                     bufferedReader.close();
                 } catch (IOException ex) {
                     ex.printStackTrace();
+                    textField.setText("Please fill out both inputs in correct format!");
                 }
+
+
+
+                textField.setText(textField.getText() + "\nChecking...");
+
                 buildDict db = new buildDict();
                 try {
                     db.build();
                 } catch (Exception ex) {
                     ex.printStackTrace();
+                    textField.setText("Please fill out both inputs in correct format!");
                 }
                 try {
-                    System.out.println(sc.check(test_Input.getText()));
+
+                    // main output
+                    textField.setText(textField.getText() +"\n" + (sc.check(test_Input.getText())));
                 } catch (Exception ex) {
                     ex.printStackTrace();
+                    textField.setText("Please fill out both inputs in correct format!");
                 }
 
+
+                textField.setText(textField.getText() + "\n--finish--");
                 System.out.println("--finish--");
                 System.exit(0);
-
-//
-//                String inputCom = url_Input.getText();
-//                crawlerInput = url_Input.getText();
-//
-//                System.out.println(crawlerInput);
-//
-//                textField.setText(inputCom);
-//                inputCom += "\n"+test_Input.getText();
-//                checkerInput = test_Input.getText();
-//
-//                textField.setText(inputCom);
             }
         });
 
@@ -173,15 +176,13 @@ public class GUI {
     }
 
 
-    public static void main (String[] args) {
+//    public static void main (String[] args) {
+    public void run() {
         JFrame frame = new JFrame("GUI");
         frame.setContentPane(new GUI().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setBounds(400, 200, 600, 400);
         frame.setVisible(true);
-//        GUI myGUI = new GUI();
-//        String test = "crawler www.google.com";
-//        myGUI.commandAnalyzer(test);
     }
 }
