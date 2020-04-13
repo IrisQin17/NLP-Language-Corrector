@@ -56,7 +56,7 @@ all of our reasult is store in a List `List<List<tokenType>> result`
 
 ### Graph User Interface:
 
-![image](img/UI.png width="300")
+![image](img/UI.png | width=48)
 
 *NOTE: the GUI now is temporally offline, since we haven't deal with thread issues.
 
