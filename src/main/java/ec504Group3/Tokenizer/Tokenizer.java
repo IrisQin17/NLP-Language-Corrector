@@ -34,7 +34,8 @@ public class Tokenizer {
         // get rid of punctuation
         if (Pattern.matches("[\\p{Punct}\\p{IsPunctuation}]", w.word()))
           continue;
-        String[] underscoreSplit = tagger.tagTokenizedString(w.word()).split("_");
+        String[] underscoreSplit = tagger.tagTokenizedString(w.word()).replaceAll("-", "").replaceAll("``", "ZT").split("[_ ]");
+
         tSentence.add(new TokenType(underscoreSplit[1], underscoreSplit[0]));
       }
       res.add(tSentence);
