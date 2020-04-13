@@ -7,10 +7,18 @@ import java.io.*;
 import java.net.URL;
 
 public class test {
+
+    // global variables
+    static String urlListPath, textPath ;
+    static boolean correctFormat;
+
+
+
     public static void main (String[] args) throws Exception {
         URLListCreater creater = new URLListCreater();
         creater.create(new URL("https://www.rndsystems.com/cn"));
         String urlAddress = "src/main/java/ec504Group3/Resource/URL-list";
+
         FileInputStream inputStream = new FileInputStream(urlAddress);
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         String str = null;
@@ -33,7 +41,7 @@ public class test {
         bufferedReader.close();
         buildDict db = new buildDict();
         db.build();
-        System.out.println(sc.check("src/main/java/ec504Group3/Resource/CheckFile/check-0.txt"));
+        System.out.println(sc.check("src/main/java/ec504Group3/Resource/CheckFile/check-1cx.txt"));
 
         System.out.println("--finish--");
         System.exit(0);
