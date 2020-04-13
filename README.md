@@ -143,7 +143,6 @@ Explanation: A system for automatic English grammatical error correction.
 
 ## Work breakdown
 #### Ting Zhang:
-Ting Zhang:
 Design the project structure and coordinate between each part of project with correct packages. I mainly focus on database design and implementation, checker algorithm design and implementation, crawler-database-checker linkage and test implementation. Tasks included: 
 1) ArangoDB installation and usage. 
 2) Graph database node & edge functions implementation and debug. 
