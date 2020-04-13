@@ -44,6 +44,7 @@ public class ScoreChecker{
                     System.out.println(from.getPos()+" to "+to.getPos()+" : "+ 0);
                 }
             }
+            sentence.append(token.get(token.size()-1).word).append(" ");
             System.out.println("{"+sentence.toString()+"} score: "+tmp_score);
         }
         return score;
