@@ -17,6 +17,8 @@ public class GUI {
     private JFormattedTextField test_Input;
     private JLabel url_lable;
     private JLabel test_label;
+    private JRadioButton GermanButton;
+    private JRadioButton SpanishButton;
     private boolean EnglishSelected, ChineseSelected, FrenchSelected = false;
     public String crawlerInput = "";
     public String checkerInput;
@@ -65,6 +67,23 @@ public class GUI {
             }
         });
 
+        GermanButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(GermanButton.isSelected()){
+                    textField.setText("German Selected");
+                }
+            }
+        });
+        SpanishButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(SpanishButton.isSelected()){
+                    textField.setText("Spanish Selected");
+                }
+            }
+        });
+
         resetButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -83,9 +102,6 @@ public class GUI {
 
     }
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
 
     // 解析
     private void commandAnalyzer(String inputStr){
