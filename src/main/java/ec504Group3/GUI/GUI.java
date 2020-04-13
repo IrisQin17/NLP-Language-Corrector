@@ -10,11 +10,13 @@ public class GUI {
     private JRadioButton EnglishButton;
     private JFormattedTextField url_Input;
     private JButton enterButton;
-    private JTextArea Tittle;
+    private JLabel Title;
     private JRadioButton ChineseButton;
     private JRadioButton FrenchButton;
     private JButton resetButton;
     private JFormattedTextField test_Input;
+    private JLabel url_lable;
+    private JLabel test_label;
     private boolean EnglishSelected, ChineseSelected, FrenchSelected = false;
     public String crawlerInput ="URL-list";
     public String checkerInput;
@@ -24,7 +26,7 @@ public class GUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(url_Input.getText().equals(null) || url_Input.getText().equals("") ||test_Input.getText().equals(null) || test_Input.getText().equals("") ){
-                    textField.setText("plz filling both input");
+                    textField.setText("Please fill out both inputs!");
                     return;
                 }
                 String inputCom = url_Input.getText();
@@ -65,7 +67,15 @@ public class GUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 url_Input.setText(null);
-                textField.setText(null);
+                test_Input.setText(null);
+                textField.setText("\n" +
+                        "Waiting for inputs in the correct format, e.g.: \n" +
+                        "\n" +
+                        "Input PATH OF FILE OF URLs like this:\n" +
+                        "ec504Group3/Resource/URL-list\n" +
+                        "\n" +
+                        "Input PATH OF FILE TO CHECK like this:\n" +
+                        "external/taggers/input/english-input.txt");
             }
         });
 
@@ -89,6 +99,7 @@ public class GUI {
         frame.setContentPane(new GUI().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        frame.setBounds(400, 200, 600, 400);
         frame.setVisible(true);
 //        GUI myGUI = new GUI();
 //        String test = "crawler www.google.com";
