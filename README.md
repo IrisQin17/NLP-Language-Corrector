@@ -9,7 +9,7 @@ Excluded minimum requirements, there are some other possible features we can add
 
 ## Group Members
 
-Ting Zhang
+Ting Zhang 
 
 Bowen Qin
 
@@ -23,25 +23,40 @@ Yuan Wei	(yuanwei@bu.edu)
 
 ### Crawler:
 
+Crawler:
 
+​	In our project,  the input is the path of file of URLs, to implement we use an original URL (which is “http://www.rndsystems.com/cn” in test) to fetch URLs in that URL web, and form a txt containing these URLs and then read each URL in URL-list.txt line-by-line which is stored locally in Resource Director.
+
+For each URL, use crawler fetch the corresponding web content into local file, and name the file with each URL’s index in URL-list.txt.All the inter local stored files will be stored in local Resource directory.There is an interface named “crawler.java”, “URL2File.java” implements this interface and overrides the function of “StoreFile” whose input is a specific string representing URL.
+
+​    In the first step, correct english language content is read in and stored into our data storage which is a directed graphThen in the step of calling checker, checker will read and parse the content of a specific file, find the corresponding words and phrases in graph, and check their neighbors. Finally the checker will give out the score.
 
 
 
 ### Tokenizer:
 
-For every word in sentences,  it is assigned in accordance with its syntactic functions. We call them part of speech (pos). Even though the same word, it may have different syntactic functions. For example, the word "fall" may act like a verb means move downward and also it could act like a noun with the same meaning as "autunm". That is to say, the we should consider both the POS and the word itself. hence we should standardize the word with the word and its POS.
+For every word in sentences,  it is assigned in accordance with its syntactic functions. We call them part of speech (pos). Even though the same word, it may have different syntactic functions. For example, the word "fall" may act like a verb means move downward and also it could act like a noun with the same meaning as "autunm". That is to say, the we should consider both the POS and the word itself. Hence we should standardize the word with the word and its POS.
 
-hence the tokenzier should standerlize the input with:
+The tokenzier should standerlize the input with:
 
 - Part of Speech, POS
 - Word
 
+In our project, we created a class named "tokenType" which contains the elements we mentioned. Words are added with pos. The POS are get from Stanford NLP API using its trained model. 
 
-
-
+all of our reasult is store in a List `List<List<tokenType>> result`
 
 ### Database:
+
+<img src="/Users/yuanwei/Library/Application Support/typora-user-images/image-20200412225514408.png" alt="image-20200412225514408" style="zoom:50%;" />
+
 ### Checker:
+
+
+
+### Graph User Interface
+
+
 
 
 
