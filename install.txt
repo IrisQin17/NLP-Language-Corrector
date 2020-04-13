@@ -35,18 +35,40 @@ Pre-conditions
             rm ~/Library/LaunchAgents/homebrew.mxcl.arangodb.plist
             If the latest ArangoDB version is not shown in Homebrew, you also need to update Homebrew executing the command brew update.
 
-    Windows:
-        please follow the instructions on the website:
-            https://www.arangodb.com/docs/stable/installation-windows.html
+        Windows:
+            please follow the instructions on the website:
+                https://www.arangodb.com/docs/stable/installation-windows.html
 
 Supporting files
 - A list of non-standard libraries needed for your project to run, including:
-    - Clear and simple instructions for how to freely (and legally!) acquire and install them with minimal effort.
+    - Dependency for arangodb, stanfordNLP, log4j,.etc in Maven project structure concluded in pom.xml. (Users need to click on "import changes" for these dependencies in IDE)
+    - Java swing, awt and etc. libraries for UI display
 - Examples of how to use your project
-    - Several clear examples the illustrate the main features of your project.
+    - Currently GUI window is offline and cannot be combined with our core algorithm and strucuture due to some problems of thread
+    - Users now could simply run the "test.java.main()" in test.java in "src/main/java/ec504Group3/" to view the whole crawler-database-checker processes.
 - Descriptions of testing patterns, and instructions on how to exercise them:
-    - unit tests
-    - system tests
+    - test:
+        - The URL https://www.rndsystems.com/cn is chosen as the original URL. Then we crawler several URLs from this URL and store them into URL-list file. Then for each line (URL) in this file, we crawler the data and dump them into local files. In the test, we successfully store 15 files locally.
+        - Transferring each file into token type and get the pos tag of each word in the file by using StanfordNLP.api.
+        - Information is successfully stroed into graph database.
+        - One checkfile is creaded in CheckFile directory and its content is also transferred to token type.
+        - Token type pairs in check file are checked in order based on our algorithm for searching frequency in the graph database.
+        - The error rate in our dictionary is about 0.002% in 15 files.
+        - We deliberately make some mistakes in checkfile. And the test result shows out our algorithm works well since some sentences with mistakes do has some reasonable suspicion scores.
+        - Some example results:
+            - {With DrupalCon being postponed or potentially canceled there will be a significant financial impact on our beloved nonprofit } score: 10
+            - {Because we all have different needs Drupal allows you to create a unique space in a world of cookiecutter solutions } score: 10
+            - {We 're the leading opensource CMS for ambitious digital experiences that reach your audience across multiple channels } score: 0
+            - {She is responsible for organizing and motivating a worldwide collective dedicated to Internet openness } score: 20
+        - As you can see, our suspicion score is reasonable
 
 Execution
-- Clear and terse instructions on how an average student in the class can compile and run all your code, from scratch.
+- Import the corresponding dependencies in IDE correctly.
+- Make sure the arangoDB is successfully installed on your system and arangodb database service is successfully set up on your system.
+- Use "127.0.0.1:8529" to make HTTPs request in your own browser. The operation can be simply accessing the 127.0.0.1:8529 by your local browser.
+- After accessing this IP:port, a login site will occur in your browser.
+- Use login name as "root" and password as "" to login.
+- After logged in, add a new graph named "allston" in graph page, with edge definition as "freqs", from collection as "words" and to collection as "words".
+- Then simply run the test.java in "src/main/java/ec504Group3/" directory to get the test result.
+- The crawler original URL could be changed in test.java
+- The checker file can be put into "src/main/java/ec504Group3/Resource/CheckerFile/" directory and be claimed and checked in test.java
