@@ -81,11 +81,39 @@ The file data content is transferred to token information using API. Then each t
 
 ![image](img/ui.png)
 
-*NOTE: the GUI now is temporaly offline, since we haven't deal with thread issues.
+GUI now is currently online.
 
 As it show in our graph above, we offer the PATH of the URL files and  PATH of File which we'd like to check.The input path would be pass to the crawler.class  to get the URL and generate the text file.
 
-Three language detect options are offered in our project. For each language we select, a different model would be applied for analysis. 
+Three language detect options are offered in our project. For each language we select, a different model would be applied for analysis.
+
+#### Execution Step is like:
+
+- Database Setup:
+
+        - Make sure the arangoDB is successfully installed on your system and arangodb database service is successfully set up on your system.
+
+        - Use "127.0.0.1:8529" to make HTTPs request in your own browser. The operation can be simply accessing the 127.0.0.1:8529 by your local browser.
+
+        - After accessing this IP:port, a login site will occur in your browser.
+
+        - Use login name as "root" and password as "" to login.
+
+        - After logged in, add a new graph named "allston" in graph page, with edge definition as "freqs", from collection as "words" and to coleection as "words".
+
+    - Currently GUI window is used and is successfully combined with our core algorithm and strucuture
+
+    - Users now could simply run the "GUI.java" in "src/main/java/ec504Group3/GUI/" directory to view the whole crawler-database-checker processes.
+
+    - As you can see in our GUI part, there are several language choices you can choose to correct a specific language.
+
+    - After choosing a specific language, you need to enter in legal input into two text fields below which are "crawler URL List file" and "checker file".
+
+    - Currently legal input is "src/main/java/ec504Group3/Resource/URL-list" and "external/taggers/input/english-input.txt"
+
+    - After typing in the legal file path, you could click the button "enter" or you could press button "reset" to re-type the file path. (Database setup is required)
+
+    - After some time of running, the result will be shown on the text Area on GUI
 
 
 
@@ -124,10 +152,12 @@ Design the project structure and coordinate between each part of project with co
 
 #### Bowen Qin:
 - Worked on Tokenizer: Learning Stanford CoreNLP API and deployed its environment using Maven. Successfully developed tokenizer that support German, Spanish, French(which none of the team members have fluency), Chinese and English.
-- GUI design and improvement: Using Swing UI Designer.
+- GUI improvement and core algorithm connection: Using Swing UI Designer.
+
 #### Ganghao Li:
 - Mainly working on design Data Structure and implement the code of database. 
 - Also join the design of modeling about calculate the score in check.java.
+
 #### Hao Zuo:
 
 #### Yuan Wei:
