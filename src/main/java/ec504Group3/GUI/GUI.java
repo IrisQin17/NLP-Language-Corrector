@@ -1,8 +1,15 @@
 package ec504Group3.GUI;
 
+import ec504Group3.Checker.ScoreChecker;
+import ec504Group3.Crawler.URL2File;
+import ec504Group3.Crawler.URLListCreater;
+import ec504Group3.Crawler.buildDict;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
+import java.net.URL;
 
 public class GUI {
     private JPanel panel1;
@@ -19,11 +26,11 @@ public class GUI {
     private JLabel test_label;
     private JRadioButton GermanButton;
     private JRadioButton SpanishButton;
-    private boolean EnglishSelected, ChineseSelected, FrenchSelected = false;
-    public String crawlerInput = "";
-    public String checkerInput;
+//    private boolean EnglishSelected, ChineseSelected, FrenchSelected = false;
+//    public String crawlerInput = "";
+//    public String checkerInput;
 
-    public GUI() {
+    public GUI(){
         enterButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -32,15 +39,78 @@ public class GUI {
                     return;
                 }
 
-                String inputCom = url_Input.getText();
-                crawlerInput = url_Input.getText();
-                System.out.println(crawlerInput);
-                textField.setText(inputCom);
-                inputCom += "\n"+test_Input.getText();
-                checkerInput = test_Input.getText();
-                textField.setText(inputCom);
+
+
+                String urlAddress = url_Input.getText();
+
+                FileInputStream inputStream = null;
+                try {
+                    inputStream = new FileInputStream(urlAddress);
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                String str = null;
+                URL2File uf = new URL2File();
+                ScoreChecker sc = new ScoreChecker();
+                int count=0;
+                while(true)
+                {
+                    try {
+                        if (!((str = bufferedReader.readLine()) != null)) break;
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                    try{
+                        uf.StoreFile(str,count);
+                    }catch (Exception ee){
+                        continue;
+                    }
+
+                    count++;
+                }
+
+                //close
+                try {
+                    inputStream.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                try {
+                    bufferedReader.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                buildDict db = new buildDict();
+                try {
+                    db.build();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                try {
+                    System.out.println(sc.check(test_Input.getText()));
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+                System.out.println("--finish--");
+                System.exit(0);
+
+//
+//                String inputCom = url_Input.getText();
+//                crawlerInput = url_Input.getText();
+//
+//                System.out.println(crawlerInput);
+//
+//                textField.setText(inputCom);
+//                inputCom += "\n"+test_Input.getText();
+//                checkerInput = test_Input.getText();
+//
+//                textField.setText(inputCom);
             }
         });
+
+
 
         EnglishButton.addActionListener(new ActionListener() {
             @Override
@@ -103,16 +173,7 @@ public class GUI {
     }
 
 
-    // 解析gi
-    private void commandAnalyzer(String inputStr){
-        String[] list = inputStr.split(" ");
-        for (String s : list){
-            System.out.println(" " + s);
-        }
-        return;
-    }
-
-    public void run() {
+    public static void main (String[] args) {
         JFrame frame = new JFrame("GUI");
         frame.setContentPane(new GUI().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
