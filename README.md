@@ -44,21 +44,24 @@ In our project, we created a class named "tokenType" which contains the elements
 All of our reasult is store in a List `List<List<tokenType>> result`
 
 For now, we support German, Spanish, French(which none of the team members have fluency), Chinese and English.
+
 ### Database:
-
+Software Tool: Open-source Database ArangoDB which supports the functions of creating and maintaining a directed graph based data collections inside.
+#### Database Overview
 ![pos_tag](img/pos.png)
-1. First, we decided to use Graph to record the relationship of each PART OF SPEECH. 
+1. Directed graph data structure is chosen to record the relationship of each part of URL file content. The whole correct language data info are stored inside the Arangodb Graph inside database. Information like the relationship between words and their token pos(position of speech) type are all maintained inside graph.
 
-2. Each Node will store a unique part of speech, and the weight of node is the total number of edges from this node to other nodes.
+2. Each Node inside graph is used to store a unique part of speech. It has two type fields which are specfic word token's pos tag and the value to store the weight. The weight of node is the total number of edges directing out from this node to other nodes. For example, a possible pos tag of a word can be "NN" which means "noun.". Then its pos value can be "NN". And maybe it has out-degree as 2000 after we building our dictionary, then the final weight of this node can be 2000.
 
-3. Each edge will contains its start and end, which shows the relationship of 2 adjacent part of speech in the sentence. Besides, the weight of edge means the total number of this relation appearing in dictionary.
+3. Each edge will contains its start and end, which shows the relationship of 2 adjacent part of speech in the sentence. Besides, the weight of edge means the total number of this relation appearing in dictionary. For example, an edge pointing from node with pos "JJ" (adj.) to node with pos "NN" (noun.) can have a weight as 1000, which means when we are building the dictionary, we meet 1000 times of a two-word phrase as term of "adj. - noun."
 
-4. According to above illustration, we need the database to store the graph, so we use ArangoDB for our project, which has APIs for Graph。
+4. Each time we read new data in, we will keep updating or creating new nodes and edges fro the whole database.
 
 5. Some important functions in database:
-- getAllEdges(): get all edges stored in graph
-- getNodeEdges(String pos): get all edges from the node which stores target part of speech.
-- EdgePutin(String fromPos, String toPos): If there is no edge exists in Graph, it will insert the corresponding node the edges with weight 1. Otherwise, it will update the present node's and edge's weight with "+1".
+- getAllEdges(): get all edges stored in graph. This function is used for checker.
+- getNodeEdges(String pos): get all edges from the node which stores target part of speech. This function is used for checker.
+- GetEdge(Node from, Node to): get the specific edge in graph that satrting from Node "from" to Node "to". This function is used for checker.
+- EdgePutin(String fromPos, String toPos): If there is no edge exists in Graph, it will insert the corresponding node.
 
 This is the visualized figure of the graph data structure we built:![pos_graph](img/graph.png) 
 
