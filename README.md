@@ -8,7 +8,7 @@ Excluded minimum requirements, there are some other possible features we can add
 
 ## Group Members
 
-Ting Zhang 
+Ting Zhang (ztvince@bu.edu)
 
 Bowen Qin   (bwqin@bu.edu)
 
@@ -115,7 +115,12 @@ Explanation: A system for automatic English grammatical error correction.
 
 ## Work breakdown
 #### Ting Zhang:
-
+Ting Zhang:
+Design the project structure and coordinate between each part of project with correct packages. I mainly focus on database design and implementation, checker algorithm design and implementation, crawler-database-checker linkage and test implementation. Tasks included: 
+1) ArangoDB installation and usage. 
+2) Graph database node & edge functions implementation and debug. 
+3) Checker algorithm design & implementation. 
+4) Simple crawler-database-checker connection test implementation and system debug.
 
 #### Bowen Qin:
 - Worked on Tokenizer: Learning Stanford CoreNLP API and deployed its environment using Maven. Successfully developed tokenizer that support German, Spanish, French(which none of the team members have fluency), Chinese and English.
