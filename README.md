@@ -39,7 +39,7 @@ For every word in sentences,  it is assigned in accordance with its syntactic fu
 
 The tokenzier should standerlize the input with:
 
-- Part of Speech, POS
+- Part of Speech (POS)
 - Word
 
 In our project, we created a class named "tokenType" which contains the elements we mentioned. Words are added with pos. The POS are get from Stanford NLP API using its trained model. 
