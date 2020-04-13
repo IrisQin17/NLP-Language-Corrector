@@ -165,7 +165,7 @@ public class GUI {
                         "Waiting for inputs in the correct format, e.g.: \n" +
                         "\n" +
                         "Input PATH OF FILE OF URLs like this:\n" +
-                        "ec504Group3/Resource/URL-list\n" +
+                        "src/main/java/ec504Group3/Resource/URL-list\n" +
                         "\n" +
                         "Input PATH OF FILE TO CHECK like this:\n" +
                         "external/taggers/input/english-input.txt");

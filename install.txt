@@ -80,7 +80,7 @@ Execution
 - After accessing this IP:port, a login site will occur in your browser.
 - Use login name as "root" and password as "" to login.
 - After logged in, add a new graph named "allston" in graph page, with edge definition as "freqs", from collection as "words" and to collection as "words".
-- Then simply run the "test.java" in "group3/src/main/java/ec504Group3/test.java" directory to get the GUI running
+- Then simply run the "test.java" in "group3/src/main/java/ec504Group3/" directory to get the GUI running
 - The crawler original URL could be changed in input
 - The checker original path could be changed in input
 - The checker file can be put into "src/main/java/ec504Group3/Resource/CheckerFile/" or "external/taggers/input/" directory and be claimed and checked in GUI.java

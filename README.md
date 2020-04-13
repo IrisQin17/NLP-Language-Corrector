@@ -8,13 +8,13 @@ Excluded minimum requirements, there are some other possible features we can add
 
 ## Group Members
 
-Ting Zhang (ztvince@bu.edu)
+Ting Zhang  (ztvince@bu.edu)
 
 Bowen Qin   (bwqin@bu.edu)
 
 Ganghao Li  (lighao@bu.edu)
 
-Hao Zuo
+Hao Zuo     (hzuo@bu.edu)
 
 Yuan Wei	(yuanwei@bu.edu)
 
@@ -103,9 +103,9 @@ Three language detect options are offered in our project. For each language we s
 
         - After logged in, add a new graph named "allston" in graph page, with edge definition as "freqs", from collection as "words" and to coleection as "words".
 
-    - Currently GUI window is used and is successfully combined with our core algorithm and strucuture
+    - Currently GUI window is used and is successfully combined with our core algorithm and structure
 
-    - Users now could simply run the "GUI.java" in "src/main/java/ec504Group3/GUI/" directory to view the whole crawler-database-checker processes.
+    - Users now could simply run the "test.java" in "src/main/java/ec504Group3/" directory to view the whole crawler-database-checker processes on both GUI and console.
 
     - As you can see in our GUI part, there are several language choices you can choose to correct a specific language.
 
@@ -160,6 +160,11 @@ Design the project structure and coordinate between each part of project with co
 - Also join the design of modeling about calculate the score in check.java.
 
 #### Hao Zuo:
+- Discussion with teammates about algorithm design
+- Stanford NLP API research
 
-
-#### Yuan Wei:
+### Yuan Wei
+- standardize the word and part of speech in class named `TokenType.class`.
+- implements Crawler URL-Search, makes our crawler able to generater URL from a given URL. 
+- Designs and implements the Graph interface so that the user could use it for test in a easier way.
+- Build the Main Structure of Readme.md document
