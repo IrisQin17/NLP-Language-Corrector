@@ -56,7 +56,7 @@ all of our reasult is store in a List `List<List<tokenType>> result`
 
 ### Graph User Interface:
 
-<img src="/Users/yuanwei/Documents/GitHub/group3Proj/img/UI.png" style="zoom:45%;" />
+![image](https://agile.bu.edu/bitbucket/projects/EP/repos/group3/browse/img?at=refs%2Fheads%2Fyuanwei/UI.png)
 
 *NOTE: the GUI now is temporaly offline, since we haven't deal with thread issues.
 
