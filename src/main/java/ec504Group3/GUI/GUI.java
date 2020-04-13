@@ -103,7 +103,7 @@ public class GUI {
     }
 
 
-    // 解析
+    // 解析gi
     private void commandAnalyzer(String inputStr){
         String[] list = inputStr.split(" ");
         for (String s : list){
