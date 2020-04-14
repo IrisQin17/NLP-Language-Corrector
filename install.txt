@@ -84,3 +84,4 @@ Execution
 - The crawler original URL could be changed in input
 - The checker original path could be changed in input
 - The checker file can be put into "src/main/java/ec504Group3/Resource/CheckerFile/" or "external/taggers/input/" directory and be claimed and checked in GUI.java
+- Please wait for 5 minutes to get the result.

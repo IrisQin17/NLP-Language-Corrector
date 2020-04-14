@@ -14,19 +14,14 @@ import javax.xml.crypto.Data;
 
 
 public class buildDict {
-    public static MaxentTagger englishTagger = new MaxentTagger("external/taggers/models/english-bidirectional-distsim.tagger");
-    public static MaxentTagger germanTagger = new MaxentTagger("external/taggers/models/german-fast.tagger");
-    public static MaxentTagger spanishTagger = new MaxentTagger("external/taggers/models/spanish.tagger");
-    public static MaxentTagger chineseTagger = new MaxentTagger("external/taggers/models/chinese-distsim.tagger");
-    public static MaxentTagger frenchTagger = new MaxentTagger("external/taggers/models/french.tagger");
-    public void build() throws Exception {
+   public void build(MaxentTagger languageTagger) throws Exception {
         String urlAddress = "src/main/java/ec504Group3/Resource/webFile/url-";
         int FileCount=0;
         while (true){
 //            FileInputStream fin;
             List<List<TokenType>> tokens;
             try{
-                tokens = Tokenizer.getTokens(englishTagger,urlAddress+FileCount+".txt");
+                tokens = Tokenizer.getTokens(languageTagger,urlAddress+FileCount+".txt");
             }catch (IOException e){
                 break;
             }

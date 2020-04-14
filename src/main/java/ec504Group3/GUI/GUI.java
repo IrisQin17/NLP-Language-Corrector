@@ -3,6 +3,7 @@ package ec504Group3.GUI;
 import ec504Group3.Checker.ScoreChecker;
 import ec504Group3.Crawler.URL2File;
 import ec504Group3.Crawler.buildDict;
+import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -10,28 +11,44 @@ import java.awt.event.ActionListener;
 import java.io.*;
 
 public class GUI {
+    private JLabel Title, url_label, test_label;
     private JPanel panel1;
     private JTextArea textField;
     private JRadioButton EnglishButton;
     private JFormattedTextField url_Input;
     private JButton enterButton;
-    private JLabel Title;
     private JRadioButton ChineseButton;
     private JRadioButton FrenchButton;
     private JButton resetButton;
     private JFormattedTextField test_Input;
-    private JLabel url_lable;
-    private JLabel test_label;
     private JRadioButton GermanButton;
     private JRadioButton SpanishButton;
-//    private boolean EnglishSelected, ChineseSelected, FrenchSelected = false;
-//    public String crawlerInput = "";
-//    public String checkerInput;
+    private ButtonGroup LanguageSelect;
+    private MaxentTagger languageTagger;
+    public static MaxentTagger englishTagger = new MaxentTagger("external/taggers/models/english-bidirectional-distsim.tagger");
+    public static MaxentTagger germanTagger = new MaxentTagger("external/taggers/models/german-fast.tagger");
+    public static MaxentTagger spanishTagger = new MaxentTagger("external/taggers/models/spanish.tagger");
+    public static MaxentTagger chineseTagger = new MaxentTagger("external/taggers/models/chinese-distsim.tagger");
+    public static MaxentTagger frenchTagger = new MaxentTagger("external/taggers/models/french.tagger");
+
 
     public GUI(){
         enterButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // switch to the selected language
+                if (LanguageSelect.getSelection().equals(EnglishButton.getModel()))
+                    languageTagger = englishTagger;
+                else if (LanguageSelect.getSelection().equals(ChineseButton.getModel()))
+                    languageTagger = chineseTagger;
+                else if (LanguageSelect.getSelection().equals(FrenchButton.getModel()))
+                    languageTagger = frenchTagger;
+                else if (LanguageSelect.getSelection().equals(SpanishButton.getModel()))
+                    languageTagger = spanishTagger;
+                else
+                    languageTagger = germanTagger;
+
+
                 textField.setText("Processing...");
                 if(url_Input.getText().equals(null) || url_Input.getText().equals("") ||test_Input.getText().equals(null) || test_Input.getText().equals("") ){
                     textField.setText("Please fill out both inputs in correct format!");
@@ -39,7 +56,6 @@ public class GUI {
                 }
 
                 textField.setText(textField.getText() + "\nCrawling...");
-
 
                 String urlAddress = url_Input.getText();
 
@@ -92,7 +108,7 @@ public class GUI {
 
                 buildDict db = new buildDict();
                 try {
-                    db.build();
+                    db.build(languageTagger);
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     textField.setText("Please fill out both inputs in correct format!");
@@ -100,7 +116,7 @@ public class GUI {
                 try {
 
                     // main output
-                    textField.setText(textField.getText() +"\n" + (sc.check(test_Input.getText())));
+                    textField.setText(textField.getText() +"\n" + (sc.check(test_Input.getText(), languageTagger)));
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     textField.setText("Please fill out both inputs in correct format!");
@@ -161,7 +177,7 @@ public class GUI {
             public void actionPerformed(ActionEvent e) {
                 url_Input.setText(null);
                 test_Input.setText(null);
-                textField.setText("\n" +
+                textField.setText(
                         "Waiting for inputs in the correct format, e.g.:\n" +
                         "\n" +
                         "Input PATH OF FILE OF URLs like this:\n" +
@@ -174,8 +190,6 @@ public class GUI {
 
     }
 
-
-//    public static void main (String[] args) {
     public void run() {
         JFrame frame = new JFrame("GUI");
         frame.setContentPane(new GUI().panel1);
