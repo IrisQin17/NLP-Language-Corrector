@@ -20,6 +20,7 @@ public class ScoreChecker{
             return null;
         }
         float maintain = 0;
+        System.out.println(tokens.size());
         for (List<TokenType> token : tokens) {
             int tmp_score=0;
             StringBuilder sentence = new StringBuilder();
@@ -27,6 +28,7 @@ public class ScoreChecker{
                 sentence.append(token.get(i).word).append(" ");
                 Node from = Database.getDatabase().getNode(token.get(i).pos);
                 Node to = Database.getDatabase().getNode(token.get(i+1).pos);
+                System.out.println(token.get(i).word);
                 Edge e = Database.getDatabase().getEdge(from,to);
                 float ratio;
                 long edge_freq;
@@ -35,14 +37,15 @@ public class ScoreChecker{
                 ratio = (float)edge_freq / (float)node_freq;
                 if (ratio<0.01){
                     tmp_score = tmp_score>=100?tmp_score:tmp_score+10;
-                    res.append(from.getPos()+" to "+to.getPos()+" : "+ (int)(100 *(1-ratio)) + "\n");
+                    res.append(from.getPos()).append(" to ").append(to.getPos()).append(" : ").append((int) (100 * (1 - ratio))).append("\n");
                     System.out.println(from.getPos()+" to "+to.getPos()+" : "+ (int)(100 *(1-ratio)));
                 }else if (ratio>0.6){
-                    res.append(from.getPos()+" to "+to.getPos()+" : "+ 0 + "\n");
+                    res.append(from.getPos()).append(" to ").append(to.getPos()).append(" : ").append(0).append("\n");
                     System.out.println(from.getPos()+" to "+to.getPos()+" : "+ 0);
                 }
             }
             if (token.size()>0) {
+                System.out.println("0000000");
                 sentence.append(token.get(token.size() - 1).word).append(" ");
                 res.append("{" + sentence.toString() + "} score: " + tmp_score + "\n");
                 System.out.println("{" + sentence.toString() + "} score: " + tmp_score);

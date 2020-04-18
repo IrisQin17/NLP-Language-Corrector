@@ -25,6 +25,7 @@ public class GUI {
     private JRadioButton SpanishButton;
     private ButtonGroup LanguageSelect;
     private MaxentTagger languageTagger;
+    private String LanguageMode;
     public static MaxentTagger englishTagger = new MaxentTagger("external/taggers/models/english-bidirectional-distsim.tagger");
     public static MaxentTagger germanTagger = new MaxentTagger("external/taggers/models/german-fast.tagger");
     public static MaxentTagger spanishTagger = new MaxentTagger("external/taggers/models/spanish.tagger");
@@ -37,20 +38,34 @@ public class GUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // switch to the selected language
-                if (LanguageSelect.getSelection().equals(EnglishButton.getModel()))
+                if (LanguageSelect.getSelection().equals(EnglishButton.getModel())){
                     languageTagger = englishTagger;
+                    LanguageMode = "english";
+                }
                 else if (LanguageSelect.getSelection().equals(ChineseButton.getModel()))
+                {
                     languageTagger = chineseTagger;
+                    LanguageMode = "chinese";
+                }
                 else if (LanguageSelect.getSelection().equals(FrenchButton.getModel()))
+                {
                     languageTagger = frenchTagger;
+                    LanguageMode = "french";
+                }
                 else if (LanguageSelect.getSelection().equals(SpanishButton.getModel()))
+                {
                     languageTagger = spanishTagger;
+                    LanguageMode = "spanish";
+                }
                 else
+                {
                     languageTagger = germanTagger;
+                    LanguageMode = "german";
+                }
 
 
                 textField.setText("Processing...");
-                if(url_Input.getText().equals(null) || url_Input.getText().equals("") ||test_Input.getText().equals(null) || test_Input.getText().equals("") ){
+                if(url_Input.getText() == null || url_Input.getText().equals("") || test_Input.getText() == null || test_Input.getText().equals("") ){
                     textField.setText("Please fill out both inputs in correct format!");
                     return;
                 }
@@ -66,6 +81,7 @@ public class GUI {
                     ex.printStackTrace();
                     textField.setText("Please fill out both inputs in correct format!");
                 }
+                assert inputStream != null;
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 String str = null;
                 URL2File uf = new URL2File();
@@ -74,13 +90,13 @@ public class GUI {
                 while(true)
                 {
                     try {
-                        if (!((str = bufferedReader.readLine()) != null)) break;
+                        if ((str = bufferedReader.readLine()) == null) break;
                     } catch (IOException ex) {
                         ex.printStackTrace();
                         textField.setText("Please fill out both inputs in correct format!");
                     }
                     try{
-                        uf.StoreFile(str,count);
+                        uf.StoreFile(str,count,LanguageMode);
                     }catch (Exception ee){
                         continue;
                     }
@@ -108,7 +124,7 @@ public class GUI {
 
                 buildDict db = new buildDict();
                 try {
-                    db.build(languageTagger);
+                    db.build(languageTagger,LanguageMode);
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     textField.setText("Please fill out both inputs in correct format!");

@@ -8,9 +8,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class URL2File implements crawler{
-    @Override
-    public void StoreFile(String purpose,int count) throws IOException {
+public class URL2File{
+    public void StoreFile(String purpose,int count,String mode) throws IOException {
 
 //        File urls = new File(urlAddress);
 //        System.out.println(urls.exists());
@@ -24,7 +23,7 @@ public class URL2File implements crawler{
         Elements p_Elements = finaldocu.select("p");
         String Content = p_Elements.text();
         //Create TXT file
-        String txtPath = "src/main/java/ec504Group3/Resource/webFile";
+        String txtPath = "src/main/java/ec504Group3/Resource/"+mode+"File";
         File file = new File(txtPath+"/url-"+count+".txt");
         boolean res = file.createNewFile();
         FileOutputStream fileOutputStream = new FileOutputStream(file,true);

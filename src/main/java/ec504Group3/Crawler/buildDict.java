@@ -14,8 +14,8 @@ import javax.xml.crypto.Data;
 
 
 public class buildDict {
-   public void build(MaxentTagger languageTagger) throws Exception {
-        String urlAddress = "src/main/java/ec504Group3/Resource/webFile/url-";
+   public void build(MaxentTagger languageTagger,String mode) throws Exception {
+        String urlAddress = "src/main/java/ec504Group3/Resource/"+mode+"File/url-";
         int FileCount=0;
         while (true){
 //            FileInputStream fin;
@@ -43,17 +43,17 @@ public class buildDict {
             }
             FileCount++;
         }
-        List<Edge> edgeList = Database.getDatabase().getALLEdges();
-        List<Edge> jjlist = Database.getDatabase().getNodeEdges("JJ");
-        int jjc=0;
-        for (Edge jj:jjlist){
-            jjc+=jj.getFrequency();
-        }
-        for (Edge e:edgeList){
-            System.out.println(e.getKey()+" "+e.getFrequency()+" in "+FileCount);
-        }
-        long compare = Database.getDatabase().getNode("JJ").getNodeNum();
-        System.out.println("jj"+jjc+" and "+compare);
+//        List<Edge> edgeList = Database.getDatabase().getALLEdges();
+//        List<Edge> jjlist = Database.getDatabase().getNodeEdges("JJ");
+//        int jjc=0;
+//        for (Edge jj:jjlist){
+//            jjc+=jj.getFrequency();
+//        }
+//        for (Edge e:edgeList){
+//            System.out.println(e.getKey()+" "+e.getFrequency()+" in "+FileCount);
+//        }
+//        long compare = Database.getDatabase().getNode("JJ").getNodeNum();
+//        System.out.println("jj"+jjc+" and "+compare);
 
 
     }
