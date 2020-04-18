@@ -1,22 +1,18 @@
 package ec504Group3.Crawler;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.List;
 
 import ec504Group3.Tokenizer.*;
 import ec504Group3.Database.*;
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 
-import javax.xml.crypto.Data;
-
 
 public class buildDict {
    public void build(MaxentTagger languageTagger,String mode) throws Exception {
         String urlAddress = "src/main/java/ec504Group3/Resource/"+mode+"File/url-";
         int FileCount=0;
+
         while (true){
 //            FileInputStream fin;
             List<List<TokenType>> tokens;
@@ -33,12 +29,16 @@ public class buildDict {
 //                text.append(strTmp);
 //            }
 //            buffReader.close();
-
             for (List<TokenType> token : tokens) {
                 for (int i=0;i<token.size()-1;i++) {
 //                    System.out.println("the tag is " + value.pos + " the token is " + value.word);
 //                    System.out.println(token.get(i).pos+"----"+token.get(i+1).pos+"---");
-                    Database.getDatabase().EdgePutin(token.get(i).pos,token.get(i+1).pos);
+                    switch (mode){
+                        case "chinese": chineseDatabase.getDatabase().EdgePutin(token.get(i).pos,token.get(i+1).pos); break;
+                        case "french": frenchDatabase.getDatabase().EdgePutin(token.get(i).pos,token.get(i+1).pos); break;
+                        default: englishDatabase.getDatabase().EdgePutin(token.get(i).pos,token.get(i+1).pos);break;
+                    }
+
                 }
             }
             FileCount++;

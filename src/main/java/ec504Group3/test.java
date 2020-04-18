@@ -8,11 +8,10 @@ import java.net.URL;
 public class test {
 
     public static void main (String[] args) throws Exception {
-        System.out.println("start");
         GUI gui = new GUI();
         gui.run();
 //        URLListCreater uc = new URLListCreater();
-//        URL url = new URL("https://www.lemonde.fr/");    // french web
+//        URL url = new URL("https://www.rndsystems.com/");
 //        uc.create(url);
     }
 }

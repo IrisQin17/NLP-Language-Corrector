@@ -31,7 +31,7 @@ public class Tokenizer {
           continue;
         String[] underscoreSplit = tagger.tagTokenizedString(w.word()).replaceAll("-", "").replaceAll("``", "ZT").split("[_ ]");
 
-        System.out.println(tagger.tagTokenizedString(w.word()));
+//        System.out.println(tagger.tagTokenizedString(w.word()));
 
         try {
           tSentence.add(new TokenType(underscoreSplit[1], underscoreSplit[0]));

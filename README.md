@@ -150,6 +150,7 @@ Design the project structure and coordinate between each part of project with co
 2) Graph database node & edge functions implementation and debug. 
 3) Checker algorithm design & implementation. 
 4) Simple crawler-database-checker connection test implementation and system debug.
+5) Build connection to different database based on different model of language
 
 #### Bowen Qin:
 - Worked on Tokenizer: Learning Stanford CoreNLP API and deployed its environment using Maven. 

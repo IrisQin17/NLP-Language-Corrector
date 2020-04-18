@@ -14,26 +14,17 @@ import org.apache.log4j.Logger;
 
 import java.util.*;
 
-public class Database {
+public class chineseDatabase {
 
-    private static Database database;
+    private static chineseDatabase database;
     private static ArangoDatabase db;
     public static ArangoVertexCollection nodes;
     public static ArangoEdgeCollection edges;
     private static final String DATABASE = "_system";
-//    private static final String GRAPH = "allston";
-//    private static final String NODES = "words";
-//    private static final String EDGES = "freqs";
-
-//    private static final String GRAPH = "chinese";
-//    private static final String NODES = "chinese_words";
-//    private static final String EDGES = "chinese_freqs";
-
-    private static final String GRAPH = "french";
-    private static final String NODES = "french_words";
-    private static final String EDGES = "french_freqs";
-
-    private Database() {
+    private static final String GRAPH = "chinese";
+    private static final String NODES = "words";
+    private static final String EDGES = "freqs";
+    private chineseDatabase() {
         BasicConfigurator.configure();
         Logger.getRootLogger().setLevel(Level.OFF);
         db = new ArangoDB.Builder().host("127.0.0.1",8529).user("root").password("").build().db(DATABASE);
@@ -42,8 +33,11 @@ public class Database {
         edges = graph.edgeCollection(EDGES);
     }
 
-    public static Database getDatabase() {
-        if (database == null) database = new Database();
+    public static chineseDatabase getDatabase() {
+        if (database == null) {
+            database = new chineseDatabase();
+            System.out.println("-----------------Create----------------");
+        }
         return database;
     }
 
@@ -189,6 +183,7 @@ public class Database {
     }
 
 }
+
 
 
 

@@ -18,7 +18,7 @@ public class URLListCreater {
         Pattern p = Pattern.compile(regex);
         try {
             urlconn = url.openConnection();
-            pw = new PrintWriter(new FileWriter("src/main/java/ec504Group3/Resource/FrenchURL_List"), true);
+            pw = new PrintWriter(new FileWriter("src/main/java/ec504Group3/Resource/EnglishURL_List"), true);
             br = new BufferedReader(new InputStreamReader(
                     urlconn.getInputStream()));
             String buf = null;

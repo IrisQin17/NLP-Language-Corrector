@@ -132,7 +132,7 @@ public class GUI {
                 try {
 
                     // main output
-                    textField.setText(textField.getText() +"\n" + (sc.check(test_Input.getText(), languageTagger)));
+                    textField.setText(textField.getText() +"\n" + (sc.check(test_Input.getText(), languageTagger,LanguageMode)));
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     textField.setText("Please fill out both inputs in correct format!");
@@ -197,7 +197,7 @@ public class GUI {
                         "Waiting for inputs in the correct format, e.g.:\n" +
                         "\n" +
                         "Input PATH OF FILE OF URLs like this:\n" +
-                        "/PATH/TO/URL-list\n" +
+                        "/PATH/TO/EnglishURL_List\n" +
                         "\n" +
                         "Input PATH OF FILE TO CHECK like this:\n" +
                         "/PATH/TO/check-0.txt");

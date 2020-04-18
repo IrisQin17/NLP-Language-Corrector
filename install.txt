@@ -49,7 +49,7 @@ Supporting files
         - Use "127.0.0.1:8529" to make HTTPs request in your own browser. The operation can be simply accessing the 127.0.0.1:8529 by your local browser.
         - After accessing this IP:port, a login site will occur in your browser.
         - Use login name as "root" and password as "" to login.
-        - After logged in, add a new graph named "allston" in graph page, with edge definition as "freqs", from collection as "words" and to coleection as "words".
+        - After logged in, add three new graphs named "english", "chinese", "french" in graph page, with edge definition as "freqs", from collection as "words" and to coleection as "words".
     - Currently GUI window is used and is successfully combined with our core algorithm and structure
     - Users now could simply run the "test.java" in "group3/src/main/java/ec504Group3/test.java" directory to view the whole crawler-database-checker processes.
     - As you can see in our GUI part, there are several language choices you can choose to correct a specific language.
@@ -59,7 +59,7 @@ Supporting files
     - After some time of running, the result will be shown on the text Area on GUI
 - Descriptions of testing patterns, and instructions on how to exercise them:
     - test:
-        - The URL https://www.rndsystems.com/cn is chosen as the original URL. Then we crawler several URLs from this URL and store them into URL-list file. Then for each line (URL) in this file, we crawler the data and dump them into local files. In the test, we successfully store 15 files locally.
+        - Different URLs are chosen for different language URL list building as the original URL. Then we crawler several URLs from this URL and store them into URL-list file. Then for each line (URL) in this file, we crawler the data and dump them into local files. In the test, we successfully store 15 files locally.
         - Transferring each file into token type and get the pos tag of each word in the file by using StanfordNLP.api.
         - Information is successfully stored into graph database.
         - One checkfile is created in CheckFile directory and its content is also transferred to token type.
@@ -67,10 +67,15 @@ Supporting files
         - The error rate in our dictionary is about 0.002% in 15 files.
         - We deliberately make some mistakes in checkfile. And the test result shows out our algorithm works well since some sentences with mistakes do has some reasonable suspicion scores.
         - Some example results:
-            - {With DrupalCon being postponed or potentially canceled there will be a significant financial impact on our beloved nonprofit } score: 10
-            - {Because we all have different needs Drupal allows you to create a unique space in a world of cookiecutter solutions } score: 10
-            - {We 're the leading opensource CMS for ambitious digital experiences that reach your audience across multiple channels } score: 0
-            - {She is responsible for organizing and motivating a worldwide collective dedicated to Internet openness } score: 20
+            - English
+                - {With DrupalCon being postponed or potentially canceled there will be a significant financial impact on our beloved nonprofit } score: 10
+                - {Because we all have different needs Drupal allows you to create a unique space in a world of cookiecutter solutions } score: 10
+                - {We 're the leading opensource CMS for ambitious digital experiences that reach your audience across multiple channels } score: 0
+                - {She is responsible for organizing and motivating a worldwide collective dedicated to Internet openness } score: 20
+             - French (Language that all the team members don't know)
+                - {Cette approche dite ZT phylogénétique '' permet en comparant le génome du SARSCoV2 avec celui d'autres virus connus d'identifier ses ancêtres et d'émettre des hypothèses sur sa trajectoire } score: 50
+                - {Pour acquérir cette certitude les scientifiques ont étudié son histoire dont une grande partie est inscrite dans ses gènes } score: 10
+                - {S'il est bien possible de créer de toutes pièces des virus tous les indices convergent ici vers une origine naturelle de ce nouvel agent infectieux } score: 20
         - As you can see, our suspicion score is reasonable
 
 Execution
@@ -79,7 +84,7 @@ Execution
 - Use "127.0.0.1:8529" to make HTTPs request in your own browser. The operation can be simply accessing the 127.0.0.1:8529 by your local browser.
 - After accessing this IP:port, a login site will occur in your browser.
 - Use login name as "root" and password as "" to login.
-- After logged in, add a new graph named "allston" in graph page, with edge definition as "freqs", from collection as "words" and to collection as "words".
+- After logged in, add three new graphs named "english", "chinese", "french" in graph page, with edge definition as "freqs", from collection as "words" and to collection as "words".
 - Then simply run the "test.java" in "group3/src/main/java/ec504Group3/" directory to get the GUI running
 - The crawler original URL could be changed in input
 - The checker original path could be changed in input
