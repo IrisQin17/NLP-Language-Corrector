@@ -16,20 +16,13 @@ public class Tokenizer {
   /** A logger for this class */
   private static Redwood.RedwoodChannels log = Redwood.channels(Tokenizer.class);
 
-  /**  Tokenizer  */
-  public static MaxentTagger englishTagger = new MaxentTagger("external/taggers/models/english-bidirectional-distsim.tagger");
-  public static MaxentTagger germanTagger = new MaxentTagger("external/taggers/models/german-fast.tagger");
-  public static MaxentTagger spanishTagger = new MaxentTagger("external/taggers/models/spanish.tagger");
-  public static MaxentTagger chineseTagger = new MaxentTagger("external/taggers/models/chinese-distsim.tagger");
-  public static MaxentTagger frenchTagger = new MaxentTagger("external/taggers/models/french.tagger");
-
   /**  getTokens()
    * @input the right language tagger, input text file path
    * the text is separated by sentence, each word in a sentence convert to TokenType
    **/
   public static List<List<TokenType>> getTokens(MaxentTagger tagger, String inputFilePath) throws Exception{
     List<List<TokenType>> res = new LinkedList<>();
-    List<List<HasWord>> sentences = MaxentTagger.tokenizeText(new BufferedReader(new FileReader(inputFilePath)));
+    List<List<HasWord>> sentences = tagger.tokenizeText(new BufferedReader(new FileReader(inputFilePath)));
     for (List<HasWord> sentence : sentences) {
       List<TokenType> tSentence = new LinkedList<>();
       for (HasWord w: sentence) {
@@ -37,8 +30,13 @@ public class Tokenizer {
         if (Pattern.matches("[\\p{Punct}\\p{IsPunctuation}]", w.word()))
           continue;
         String[] underscoreSplit = tagger.tagTokenizedString(w.word()).replaceAll("-", "").replaceAll("``", "ZT").split("[_ ]");
+        try {
+          tSentence.add(new TokenType(underscoreSplit[1], underscoreSplit[0]));
+        }
+        catch(IndexOutOfBoundsException e) {
+          continue;
+        }
 
-        tSentence.add(new TokenType(underscoreSplit[1], underscoreSplit[0]));
       }
       res.add(tSentence);
     }
@@ -47,18 +45,15 @@ public class Tokenizer {
 
 
 
-
-
-
-  // example of how to use
-  public static void main (String[] args) throws Exception {
-    List<List<TokenType>> lists = getTokens(englishTagger,"external/taggers/input/english-input.txt");
-
-    // print out for test
-    for (List<TokenType> l : lists) {
-      for (TokenType t : l)
-        System.out.print(t.word + ": " + t.pos + " ");
-      System.out.println();
-    }
-  }
+//  // example of how to use
+//  public static void main (String[] args) throws Exception {
+//    List<List<TokenType>> lists = getTokens(englishTagger,"external/taggers/input/english-input.txt");
+//
+//    // print out for test
+//    for (List<TokenType> l : lists) {
+//      for (TokenType t : l)
+//        System.out.print(t.word + ": " + t.pos + " ");
+//      System.out.println();
+//    }
+//  }
 }

@@ -9,19 +9,13 @@ import java.io.IOException;
 import java.util.List;
 
 public class ScoreChecker{
-    public static MaxentTagger englishTagger = new MaxentTagger("external/taggers/models/english-bidirectional-distsim.tagger");
-    public static MaxentTagger germanTagger = new MaxentTagger("external/taggers/models/german-fast.tagger");
-    public static MaxentTagger spanishTagger = new MaxentTagger("external/taggers/models/spanish.tagger");
-    public static MaxentTagger chineseTagger = new MaxentTagger("external/taggers/models/chinese-distsim.tagger");
-    public static MaxentTagger frenchTagger = new MaxentTagger("external/taggers/models/french.tagger");
-
-    public String check(String checkFile) throws Exception {
+    public String check(String checkFile, MaxentTagger languageTagger) throws Exception {
         StringBuilder res = new StringBuilder();
 
         int score  = 0;
         List<List<TokenType>> tokens;
         try{
-            tokens = Tokenizer.getTokens(englishTagger,checkFile);
+            tokens = Tokenizer.getTokens(languageTagger,checkFile);
         }catch (IOException e){
             return null;
         }
@@ -48,9 +42,11 @@ public class ScoreChecker{
                     System.out.println(from.getPos()+" to "+to.getPos()+" : "+ 0);
                 }
             }
-            sentence.append(token.get(token.size()-1).word).append(" ");
-            res.append("{"+sentence.toString()+"} score: "+tmp_score + "\n");
-            System.out.println("{"+sentence.toString()+"} score: "+tmp_score);
+            if (token.size()>0) {
+                sentence.append(token.get(token.size() - 1).word).append(" ");
+                res.append("{" + sentence.toString() + "} score: " + tmp_score + "\n");
+                System.out.println("{" + sentence.toString() + "} score: " + tmp_score);
+            }
         }
         return res.toString();
     }
