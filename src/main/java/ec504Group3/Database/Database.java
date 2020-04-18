@@ -21,10 +21,17 @@ public class Database {
     public static ArangoVertexCollection nodes;
     public static ArangoEdgeCollection edges;
     private static final String DATABASE = "_system";
-    private static final String GRAPH = "allston";
-    private static final String NODES = "words";
-    private static final String EDGES = "freqs";
+//    private static final String GRAPH = "allston";
+//    private static final String NODES = "words";
+//    private static final String EDGES = "freqs";
 
+//    private static final String GRAPH = "chinese";
+//    private static final String NODES = "chinese_words";
+//    private static final String EDGES = "chinese_freqs";
+
+    private static final String GRAPH = "french";
+    private static final String NODES = "french_words";
+    private static final String EDGES = "french_freqs";
 
     private Database() {
         BasicConfigurator.configure();

@@ -22,7 +22,7 @@ public class Tokenizer {
    **/
   public static List<List<TokenType>> getTokens(MaxentTagger tagger, String inputFilePath) throws Exception{
     List<List<TokenType>> res = new LinkedList<>();
-    List<List<HasWord>> sentences = MaxentTagger.tokenizeText(new BufferedReader(new FileReader(inputFilePath)));
+    List<List<HasWord>> sentences = tagger.tokenizeText(new BufferedReader(new FileReader(inputFilePath)));
     for (List<HasWord> sentence : sentences) {
       List<TokenType> tSentence = new LinkedList<>();
       for (HasWord w: sentence) {
@@ -30,12 +30,14 @@ public class Tokenizer {
         if (Pattern.matches("[\\p{Punct}\\p{IsPunctuation}]", w.word()))
           continue;
         String[] underscoreSplit = tagger.tagTokenizedString(w.word()).replaceAll("-", "").replaceAll("``", "ZT").split("[_ ]");
+
+        System.out.println(tagger.tagTokenizedString(w.word()));
+
         try {
           tSentence.add(new TokenType(underscoreSplit[1], underscoreSplit[0]));
         }
         catch(IndexOutOfBoundsException ignored) {
         }
-
       }
       res.add(tSentence);
     }

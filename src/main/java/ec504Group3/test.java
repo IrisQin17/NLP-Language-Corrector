@@ -8,11 +8,11 @@ import java.net.URL;
 public class test {
 
     public static void main (String[] args) throws Exception {
-        System.out.println("开始");
+        System.out.println("start");
         GUI gui = new GUI();
         gui.run();
 //        URLListCreater uc = new URLListCreater();
-//        URL url = new URL("https://www.ddosi.com/b81/");
+//        URL url = new URL("https://www.lemonde.fr/");    // french web
 //        uc.create(url);
     }
 }
