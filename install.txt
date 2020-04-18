@@ -49,7 +49,7 @@ Supporting files
         - Use "127.0.0.1:8529" to make HTTPs request in your own browser. The operation can be simply accessing the 127.0.0.1:8529 by your local browser.
         - After accessing this IP:port, a login site will occur in your browser.
         - Use login name as "root" and password as "" to login.
-        - After logged in, add three new graphs named "english", "chinese", "french" in graph page, with edge definition as "freqs", from collection as "words" and to coleection as "words".
+        - After logged in, add three new graphs named "english", "chinese", "french" in graph page, with edge definition as "freqs", from collection as "words" and to collection as "words".
     - Currently GUI window is used and is successfully combined with our core algorithm and structure
     - Users now could simply run the "test.java" in "group3/src/main/java/ec504Group3/test.java" directory to view the whole crawler-database-checker processes.
     - As you can see in our GUI part, there are several language choices you can choose to correct a specific language.
@@ -89,4 +89,14 @@ Execution
 - The crawler original URL could be changed in input
 - The checker original path could be changed in input
 - The checker file can be put into "src/main/java/ec504Group3/Resource/CheckerFile/" or "external/taggers/input/" directory and be claimed and checked in GUI.java
+       You can use the links as follows.
+       - English Language:
+         - src/main/java/ec504Group3/Resource/EnglishURL_List
+         - src/main/java/ec504Group3/Resource/CheckFile/check-0.txt
+       - French Language: (Language we don't know)
+         - src/main/java/ec504Group3/Resource/FrenchURL_List
+         - src/main/java/ec504Group3/Resource/CheckFile/check-2.txt
+       - Chinese Language: (Chinese language print on GUI can a little confusing)
+         - src/main/java/ec504Group3/Resource/ChineseURL_List
+         - src/main/java/ec504Group3/Resource/Che``ckFile/check-1.txt
 - Please wait for 5 minutes to get the result.

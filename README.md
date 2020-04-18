@@ -101,7 +101,7 @@ Three language detect options are offered in our project. For each language we s
 
         - Use login name as "root" and password as "" to login.
 
-        - After logged in, add a new graph named "allston" in graph page, with edge definition as "freqs", from collection as "words" and to coleection as "words".
+        - After logged in, add three new graphs named "english", "chinese", "french" in graph page, with edge definition as "freqs", from collection as "words" and to coleection as "words".
 
     - Currently GUI window is used and is successfully combined with our core algorithm and structure
 
@@ -111,7 +111,18 @@ Three language detect options are offered in our project. For each language we s
 
     - After choosing a specific language, you need to enter in legal input into two text fields below which are "crawler URL List file" and "checker file".
 
-    - Currently legal input is "src/main/java/ec504Group3/Resource/URL-list" and "external/taggers/input/english-input.txt"
+    - Currently legal input is like "src/main/java/ec504Group3/Resource/URL-list" and "external/taggers/input/english-input.txt".
+    
+        You can use the links as follows.
+       - English Language:
+         - src/main/java/ec504Group3/Resource/EnglishURL_List
+         - src/main/java/ec504Group3/Resource/CheckFile/check-0.txt
+       - French Language: (Language we don't know)
+         - src/main/java/ec504Group3/Resource/FrenchURL_List
+         - src/main/java/ec504Group3/Resource/CheckFile/check-2.txt
+       - Chinese Language: (Chinese language print on GUI can a little confusing)
+         - src/main/java/ec504Group3/Resource/ChineseURL_List
+         - src/main/java/ec504Group3/Resource/CheckFile/check-1.txt
 
     - After typing in the legal file path, you could click the button "enter" or you could press button "reset" to re-type the file path. (Database setup is required)
 
@@ -146,11 +157,13 @@ Explanation: A system for automatic English grammatical error correction.
 ## Work breakdown
 #### Ting Zhang:
 Design the project structure and coordinate between each part of project with correct packages. I mainly focus on database design and implementation, checker algorithm design and implementation, crawler-database-checker linkage and test implementation. Tasks included: 
-1) ArangoDB installation and usage. 
-2) Graph database node & edge functions implementation and debug. 
-3) Checker algorithm design & implementation. 
-4) Simple crawler-database-checker connection test implementation and system debug.
-5) Build connection to different database based on different model of language
+1) ArangoDB installation and usage.
+2) Crawler algorithm design and implementation. 
+3) Graph database node & edge functions implementation and debug.
+4) Checker algorithm design & implementation. 
+5) Simple crawler-database-checker connection test implementation and system debug.
+6) Build connections to different databases based on different model of language.
+7) Debugging.
 
 #### Bowen Qin:
 - Worked on Tokenizer: Learning Stanford CoreNLP API and deployed its environment using Maven. 
