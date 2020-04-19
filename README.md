@@ -173,8 +173,11 @@ Design the project structure and coordinate between each part of project with co
 - Build German database
 
 #### Ganghao Li:
-- Mainly working on design Data Structure and implement the code of database. 
-- Also join the design of modeling about calculate the score in check.java.
+- Design the basic Crawler to extract all the contents from a URL.
+- Mainly working on design Data Structure and learn to use ArangoDB.
+- Implement the database.java, Edge.java, and Node.java to store the part of speech into graph and the function to maintain this data structure.
+- Debug the code related to database.java.
+- Join the design of modeling about calculate the score in check.java.
 
 #### Hao Zuo:
 - Discussion with teammates about algorithm design
