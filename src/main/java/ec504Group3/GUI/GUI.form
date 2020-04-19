@@ -141,7 +141,7 @@
               <margin top="10" left="10" bottom="10" right="10"/>
               <opaque value="true"/>
               <rows value="0"/>
-              <text value="Waiting for inputs in the correct format, e.g.:&#10;&#10;Input PATH OF FILE OF URLs like this:&#10;/PATH/TO/URL-list&#10;&#10;Input PATH OF FILE TO CHECK like this:&#10;/PATH/TO/check-0.txt"/>
+              <text value="Waiting for inputs in the correct format, e.g.:&#10;&#10;Input PATH OF FILE OF URLs like this:&#10;/PATH/TO/URL-list&#10;&#10;Input PATH OF FILE TO CHECK like this:&#10;/PATH/TO/check.txt&#10;&#10;You can use the links as follows.&#10;&#10;English Language:&#10;src/main/java/ec504Group3/Resource/EnglishURL_List&#10;src/main/java/ec504Group3/Resource/CheckFile/check-0.txt&#10;&#10;German Language: (Language we don't know)&#10;src/main/java/ec504Group3/Resource/GermanURL_List&#10;src/main/java/ec504Group3/Resource/CheckFile/check-1.txt&#10;&#10;French Language: (Language we don't know)&#10;src/main/java/ec504Group3/Resource/FrenchURL_List&#10;src/main/java/ec504Group3/Resource/CheckFile/check-2.txt"/>
               <wrapStyleWord value="true"/>
             </properties>
           </component>
