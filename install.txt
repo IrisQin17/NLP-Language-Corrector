@@ -36,8 +36,18 @@ Pre-conditions
             If the latest ArangoDB version is not shown in Homebrew, you also need to update Homebrew executing the command brew update.
 
         Windows:
-            please follow the instructions on the website:
-                https://www.arangodb.com/docs/stable/installation-windows.html
+            Installation:
+               please follow the instructions on the website:
+                    English Version: https://www.arangodb.com/docs/stable/getting-started-installation.html
+                    Chinese Version: https://blog.csdn.net/rensihui/article/details/77993786
+            Running Arangodb Service:
+                1. Go into the directory where you install your arangodb and go inside into .../usr/bin (eg.F:\arangoDB\ArangoDB3-3.6.2_win64\usr\bin)
+                2. Run cmd in administer in this 'bin' directory. Run the command "arangod --install-service". Then you have your arangodb service running.
+                3. Then click the 'arango.exe' in your bin directory, if "have fun" is shown, then it means your service is running successfully.
+                4. Click on 'arangosh.exe' in bin directory, which will ask you to enter password. You could directly press you 'Enter' and it will connect to your database.
+                5. You can check your connection in this shell or you can log into '127.0.0.1' to check availability.
+
+
 
 Supporting files
 - A list of non-standard libraries needed for your project to run, including:
