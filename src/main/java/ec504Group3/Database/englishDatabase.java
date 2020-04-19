@@ -36,7 +36,7 @@ public class englishDatabase {
     public static englishDatabase getDatabase() {
         if (database == null) {
             database = new englishDatabase();
-            System.out.println("-----------------Create----------------");
+            System.out.println("---------------English Create----------------");
         }
         return database;
     }

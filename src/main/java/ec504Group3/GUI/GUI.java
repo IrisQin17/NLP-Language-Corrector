@@ -17,19 +17,15 @@ public class GUI {
     private JRadioButton EnglishButton;
     private JFormattedTextField url_Input;
     private JButton enterButton;
-    private JRadioButton ChineseButton;
     private JRadioButton FrenchButton;
     private JButton resetButton;
     private JFormattedTextField test_Input;
     private JRadioButton GermanButton;
-    private JRadioButton SpanishButton;
     private ButtonGroup LanguageSelect;
     private MaxentTagger languageTagger;
     private String LanguageMode;
     public static MaxentTagger englishTagger = new MaxentTagger("external/taggers/models/english-bidirectional-distsim.tagger");
     public static MaxentTagger germanTagger = new MaxentTagger("external/taggers/models/german-fast.tagger");
-    public static MaxentTagger spanishTagger = new MaxentTagger("external/taggers/models/spanish.tagger");
-    public static MaxentTagger chineseTagger = new MaxentTagger("external/taggers/models/chinese-distsim.tagger");
     public static MaxentTagger frenchTagger = new MaxentTagger("external/taggers/models/french.tagger");
 
 
@@ -42,20 +38,10 @@ public class GUI {
                     languageTagger = englishTagger;
                     LanguageMode = "english";
                 }
-                else if (LanguageSelect.getSelection().equals(ChineseButton.getModel()))
-                {
-                    languageTagger = chineseTagger;
-                    LanguageMode = "chinese";
-                }
                 else if (LanguageSelect.getSelection().equals(FrenchButton.getModel()))
                 {
                     languageTagger = frenchTagger;
                     LanguageMode = "french";
-                }
-                else if (LanguageSelect.getSelection().equals(SpanishButton.getModel()))
-                {
-                    languageTagger = spanishTagger;
-                    LanguageMode = "spanish";
                 }
                 else
                 {
@@ -154,14 +140,6 @@ public class GUI {
                 }
             }
         });
-        ChineseButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(ChineseButton.isSelected()){
-                    textField.setText("Chinese Selected");
-                }
-            }
-        });
         FrenchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -176,14 +154,6 @@ public class GUI {
             public void actionPerformed(ActionEvent e) {
                 if(GermanButton.isSelected()){
                     textField.setText("German Selected");
-                }
-            }
-        });
-        SpanishButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(SpanishButton.isSelected()){
-                    textField.setText("Spanish Selected");
                 }
             }
         });
@@ -211,7 +181,7 @@ public class GUI {
         frame.setContentPane(new GUI().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setBounds(400, 200, 600, 400);
+        frame.setBounds(300, 100, 800, 600);
         frame.setVisible(true);
     }
 }

@@ -40,9 +40,9 @@ The tokenzier should standerlize the input with:
 
 In our project, we created a class named "tokenType" which contains the elements we mentioned. Words are added with pos. The POS are get from Stanford NLP API using its trained model. 
 
-All of our reasult is store in a List `List<List<tokenType>> result`
+All of our results is store in a List `List<List<tokenType>> result`
 
-For now, we support German, Spanish, French(which none of the team members have fluency), Chinese and English.
+For now, we support German, French(which none of the team members have fluency),and English.
 
 ### Database:
 Software Tool: Open-source Database ArangoDB which supports the functions of creating and maintaining a directed graph based data collections inside.
@@ -79,9 +79,9 @@ The file data content is transferred to token information using API. Then each t
 
 ### Graph User Interface:
 
-![image](img/ui.png)
+![image](img/UI.png)
 
-![image](img/ui2.png)
+![image](img/UI2.png)
 
 GUI now is currently online.
 
@@ -101,7 +101,7 @@ Three language detect options are offered in our project. For each language we s
 
         - Use login name as "root" and password as "" to login.
 
-        - After logged in, add three new graphs named "english", "chinese", "french" in graph page, with edge definition as "freqs", from collection as "words" and to coleection as "words".
+        - After logged in, add three new graphs named "english", "german", "french" in graph page, with edge definition as "freqs", from collection as "words" and to coleection as "words".
 
     - Currently GUI window is used and is successfully combined with our core algorithm and structure
 
@@ -117,12 +117,13 @@ Three language detect options are offered in our project. For each language we s
        - English Language:
          - src/main/java/ec504Group3/Resource/EnglishURL_List
          - src/main/java/ec504Group3/Resource/CheckFile/check-0.txt
+       - German Language: (Language we don't know)
+         - src/main/java/ec504Group3/Resource/GermanURL_List
+         - src/main/java/ec504Group3/Resource/CheckFile/check-1.txt
        - French Language: (Language we don't know)
          - src/main/java/ec504Group3/Resource/FrenchURL_List
          - src/main/java/ec504Group3/Resource/CheckFile/check-2.txt
-       - Chinese Language: (Chinese language print on GUI can a little confusing)
-         - src/main/java/ec504Group3/Resource/ChineseURL_List
-         - src/main/java/ec504Group3/Resource/CheckFile/check-1.txt
+
 
     - After typing in the legal file path, you could click the button "enter" or you could press button "reset" to re-type the file path. (Database setup is required)
 
@@ -167,8 +168,9 @@ Design the project structure and coordinate between each part of project with co
 
 #### Bowen Qin:
 - Worked on Tokenizer: Learning Stanford CoreNLP API and deployed its environment using Maven. 
-- Successfully developed tokenizer that support German, Spanish, French(which none of the team members have fluency), Chinese and English.
+- Successfully developed tokenizer that support German, French(which none of the team members have fluency), and English.
 - GUI improvement and core algorithm connection: Using Swing UI Designer to optimize the appearance of the GUI, and connect it to the core algorithm we built by receiving input and show output. 
+- Build German database
 
 #### Ganghao Li:
 - Mainly working on design Data Structure and implement the code of database. 

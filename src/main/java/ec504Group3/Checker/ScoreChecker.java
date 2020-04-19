@@ -27,10 +27,10 @@ public class ScoreChecker{
                 Node from,to;
                 Edge e;
                 switch (mode){
-                    case "chinese":
-                        from = chineseDatabase.getDatabase().getNode(token.get(i).pos);
-                        to = chineseDatabase.getDatabase().getNode(token.get(i+1).pos);
-                        e = chineseDatabase.getDatabase().getEdge(from,to);
+                    case "german":
+                        from = germanDatabase.getDatabase().getNode(token.get(i).pos);
+                        to = germanDatabase.getDatabase().getNode(token.get(i+1).pos);
+                        e = germanDatabase.getDatabase().getEdge(from,to);
                         break;
                     case "french":
                         from = frenchDatabase.getDatabase().getNode(token.get(i).pos);

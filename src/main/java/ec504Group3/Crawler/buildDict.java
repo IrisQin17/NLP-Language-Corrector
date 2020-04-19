@@ -34,7 +34,7 @@ public class buildDict {
 //                    System.out.println("the tag is " + value.pos + " the token is " + value.word);
 //                    System.out.println(token.get(i).pos+"----"+token.get(i+1).pos+"---");
                     switch (mode){
-                        case "chinese": chineseDatabase.getDatabase().EdgePutin(token.get(i).pos,token.get(i+1).pos); break;
+                        case "german": germanDatabase.getDatabase().EdgePutin(token.get(i).pos,token.get(i+1).pos); break;
                         case "french": frenchDatabase.getDatabase().EdgePutin(token.get(i).pos,token.get(i+1).pos); break;
                         default: englishDatabase.getDatabase().EdgePutin(token.get(i).pos,token.get(i+1).pos);break;
                     }

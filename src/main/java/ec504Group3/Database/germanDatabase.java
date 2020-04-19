@@ -12,19 +12,21 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
-public class frenchDatabase {
+public class germanDatabase {
 
-    private static frenchDatabase database;
+    private static germanDatabase database;
     private static ArangoDatabase db;
     public static ArangoVertexCollection nodes;
     public static ArangoEdgeCollection edges;
     private static final String DATABASE = "_system";
-    private static final String GRAPH = "french";
+    private static final String GRAPH = "german";
     private static final String NODES = "words";
     private static final String EDGES = "freqs";
-    private frenchDatabase() {
+    private germanDatabase() {
         BasicConfigurator.configure();
         Logger.getRootLogger().setLevel(Level.OFF);
         db = new ArangoDB.Builder().host("127.0.0.1",8529).user("root").password("").build().db(DATABASE);
@@ -33,10 +35,10 @@ public class frenchDatabase {
         edges = graph.edgeCollection(EDGES);
     }
 
-    public static frenchDatabase getDatabase() {
+    public static germanDatabase getDatabase() {
         if (database == null) {
-            database = new frenchDatabase();
-            System.out.println("----------------French Create----------------");
+            database = new germanDatabase();
+            System.out.println("-----------------German Create----------------");
         }
         return database;
     }
