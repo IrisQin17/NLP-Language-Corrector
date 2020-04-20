@@ -107,31 +107,31 @@ Three language detect options are offered in our project. For each language we s
         
 ![image](img/db.png)
 
-    - Currently GUI window is used and is successfully combined with our core algorithm and structure
+- Currently GUI window is used and is successfully combined with our core algorithm and structure
 
-    - Users now could simply run the "test.java" in "src/main/java/ec504Group3/" directory to view the whole crawler-database-checker processes on both GUI and console.
+- Users now could simply run the "test.java" in "src/main/java/ec504Group3/" directory to view the whole crawler-database-checker processes on both GUI and console.
 
-    - As you can see in our GUI part, there are several language choices you can choose to correct a specific language.
+- As you can see in our GUI part, there are several language choices you can choose to correct a specific language.
 
-    - After choosing a specific language, you need to enter in legal input into two text fields below which are "crawler URL List file" and "checker file".
+- After choosing a specific language, you need to enter in legal input into two text fields below which are "crawler URL List file" and "checker file".
 
-    - Currently legal input is like "src/main/java/ec504Group3/Resource/EnglishURL_List" and "src/main/java/ec504Group3/Resource/CheckFile/check-0.txt".
-    
-        You can use the files in following directory in the project, make sure you input the absolute paths of them:
-       - English Language:
-         - src/main/java/ec504Group3/Resource/EnglishURL_List
-         - src/main/java/ec504Group3/Resource/CheckFile/check-0.txt
-       - German Language: (Language we don't know)
-         - src/main/java/ec504Group3/Resource/GermanURL_List
-         - src/main/java/ec504Group3/Resource/CheckFile/check-1.txt
-       - French Language: (Language we don't know)
-         - src/main/java/ec504Group3/Resource/FrenchURL_List
-         - src/main/java/ec504Group3/Resource/CheckFile/check-2.txt
+- Currently legal input is like "src/main/java/ec504Group3/Resource/EnglishURL_List" and "src/main/java/ec504Group3/Resource/CheckFile/check-0.txt".
+
+    You can use the files in following directory in the project, make sure you input the absolute paths of them:
+   - English Language:
+     - src/main/java/ec504Group3/Resource/EnglishURL_List
+     - src/main/java/ec504Group3/Resource/CheckFile/check-0.txt
+   - German Language: (Language we don't know)
+     - src/main/java/ec504Group3/Resource/GermanURL_List
+     - src/main/java/ec504Group3/Resource/CheckFile/check-1.txt
+   - French Language: (Language we don't know)
+     - src/main/java/ec504Group3/Resource/FrenchURL_List
+     - src/main/java/ec504Group3/Resource/CheckFile/check-2.txt
 
 
-    - After typing in the legal file path, you could click the button "enter" or you could press button "reset" to re-type the file path. (Database setup is required)
+- After typing in the legal file path, you could click the button "enter" or you could press button "reset" to re-type the file path. (Database setup is required)
 
-    - After some time of running, the result will be shown on the text Area on GUI
+- After some time of running, the result will be shown on the text Area on GUI
 
 
 
