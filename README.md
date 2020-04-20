@@ -81,9 +81,9 @@ The file data content is transferred to token information using API. Then each t
 
 ### Graph User Interface:
 
-![image](img/ui.png)
+![image](img/UI.png)
 
-![image](img/ui2.png)
+![image](img/UI2.png)
 
 GUI now is currently online.
 
