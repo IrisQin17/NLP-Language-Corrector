@@ -59,14 +59,14 @@ Supporting files
         - Use "127.0.0.1:8529" to make HTTPs request in your own browser. The operation can be simply accessing the 127.0.0.1:8529 by your local browser.
         - After accessing this IP:port, a login site will occur in your browser.
         - Use login name as "root" and password as "" to login.
-        - After logged in, add three new graphs named "english", "german", "french" in graph page, with edge definition as "freqs", from collection as "words" and to collection as "words".
+        - After logged in, add 4 new graphs named "english", "german", "french", "spanish" in graph page, with edge definition as "freqs", from collection as "words" and to collection as "words".
     - Currently GUI window is used and is successfully combined with our core algorithm and structure
     - Users now could simply run the "test.java" in "group3/src/main/java/ec504Group3/test.java" directory to view the whole crawler-database-checker processes.
     - As you can see in our GUI part, there are several language choices you can choose to correct a specific language.
     - After choosing a specific language, you need to enter in legal input into two text fields below which are "crawler URL List file" and "checker file".
-    - Currently legal input is "src/main/java/ec504Group3/Resource/URL-list" and "external/taggers/input/english-input.txt"
     - After typing in the legal file path, you could click the button "enter" or you could press button "reset" to re-type the file path. (Database setup is required)
     - After some time of running, the result will be shown on the text Area on GUI
+
 - Descriptions of testing patterns, and instructions on how to exercise them:
     - test:
         - Different URLs are chosen for different language URL list building as the original URL. Then we crawler several URLs from this URL and store them into URL-list file. Then for each line (URL) in this file, we crawler the data and dump them into local files. In the test, we successfully store 15 files locally.
@@ -82,7 +82,7 @@ Supporting files
                 - {Because we all have different needs Drupal allows you to create a unique space in a world of cookiecutter solutions } score: 10
                 - {We 're the leading opensource CMS for ambitious digital experiences that reach your audience across multiple channels } score: 0
                 - {She is responsible for organizing and motivating a worldwide collective dedicated to Internet openness } score: 20
-             - French (Language that all the team members don't know)
+            - French (Language that all the team members don't know)
                 - {Cette approche dite ZT phylogénétique '' permet en comparant le génome du SARSCoV2 avec celui d'autres virus connus d'identifier ses ancêtres et d'émettre des hypothèses sur sa trajectoire } score: 50
                 - {Pour acquérir cette certitude les scientifiques ont étudié son histoire dont une grande partie est inscrite dans ses gènes } score: 10
                 - {S'il est bien possible de créer de toutes pièces des virus tous les indices convergent ici vers une origine naturelle de ce nouvel agent infectieux } score: 20
@@ -95,19 +95,22 @@ Execution
 - Use "127.0.0.1:8529" to make HTTPs request in your own browser. The operation can be simply accessing the 127.0.0.1:8529 by your local browser.
 - After accessing this IP:port, a login site will occur in your browser.
 - Use login name as "root" and password as "" to login.
-- After logged in, add three new graphs named "english", "german", "french" in graph page, with edge definition as "freqs", from collection as "words" and to collection as "words".
+- After logged in, add 4 new graphs named "english", "german", "french", "spanish" in graph page, with edge definition as "freqs", from collection as "words" and to collection as "words".
 - Then simply run the "test.java" in "group3/src/main/java/ec504Group3/" directory to get the GUI running
-- The crawler original URL could be changed in input
+- The crawler original URL list path could be changed in input
 - The checker original path could be changed in input
-- The checker file can be put into "src/main/java/ec504Group3/Resource/CheckerFile/" or "external/taggers/input/" directory and be claimed and checked in GUI.java
-        You can use the files in following directory in the project, make sure you input the absolute paths of them:
+- The checker file can be put into "src/main/java/ec504Group3/Resource/CheckerFile/" directory and be claimed and checked in GUI.java
+       You can use the files in following directory in the project, make sure you input the absolute paths of them:
        - English Language:
          - src/main/java/ec504Group3/Resource/EnglishURL_List
          - src/main/java/ec504Group3/Resource/CheckFile/check-0.txt
-       - German Language: (Language we don't know)
+       - German Language:
          - src/main/java/ec504Group3/Resource/GermanURL_List
          - src/main/java/ec504Group3/Resource/CheckFile/check-1.txt
-       - French Language: (Language we don't know)
+       - French Language:
          - src/main/java/ec504Group3/Resource/FrenchURL_List
          - src/main/java/ec504Group3/Resource/CheckFile/check-2.txt
-- Please wait for 3 minutes to get the result.
+      - Spanish Language:
+         - src/main/java/ec504Group3/Resource/SpanishURL_List
+         - src/main/java/ec504Group3/Resource/CheckFile/check-3.txt
+- Please wait for 5 minutes to get the result.

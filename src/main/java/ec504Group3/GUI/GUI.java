@@ -21,12 +21,14 @@ public class GUI {
     private JButton resetButton;
     private JFormattedTextField test_Input;
     private JRadioButton GermanButton;
+    private JRadioButton SpanishButton;
     private ButtonGroup LanguageSelect;
     private MaxentTagger languageTagger;
     private String LanguageMode;
     public static MaxentTagger englishTagger = new MaxentTagger("external/taggers/models/english-bidirectional-distsim.tagger");
     public static MaxentTagger germanTagger = new MaxentTagger("external/taggers/models/german-fast.tagger");
     public static MaxentTagger frenchTagger = new MaxentTagger("external/taggers/models/french.tagger");
+    public static MaxentTagger spanishTagger = new MaxentTagger("external/taggers/models/spanish-ud.tagger");
 
 
     public GUI(){
@@ -42,6 +44,11 @@ public class GUI {
                 {
                     languageTagger = frenchTagger;
                     LanguageMode = "french";
+                }
+                else if (LanguageSelect.getSelection().equals(SpanishButton.getModel()))
+                {
+                    languageTagger = spanishTagger;
+                    LanguageMode = "spanish";
                 }
                 else
                 {
@@ -158,19 +165,45 @@ public class GUI {
             }
         });
 
+        SpanishButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (SpanishButton.isSelected()) {
+                    textField.setText("Spanish Selected");
+                }
+            }
+        });
+
         resetButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 url_Input.setText(null);
                 test_Input.setText(null);
-                textField.setText(
-                        "Waiting for inputs in the correct format, e.g.:\n" +
+                textField.setText("Waiting for inputs in the correct format, e.g.:\n" +
                         "\n" +
                         "Input PATH OF FILE OF URLs like this:\n" +
-                        "/PATH/TO/EnglishURL_List\n" +
+                        "/PATH/TO/URL-list\n" +
                         "\n" +
                         "Input PATH OF FILE TO CHECK like this:\n" +
-                        "/PATH/TO/check-0.txt");
+                        "/PATH/TO/check.txt\n" +
+                        "\n" +
+                        "You can use the files in following directory in the project, make sure you input the absolute paths of them:\n" +
+                        "\n" +
+                        "English Language:\n" +
+                        "src/main/java/ec504Group3/Resource/EnglishURL_List\n" +
+                        "src/main/java/ec504Group3/Resource/CheckFile/check-0.txt\n" +
+                        "\n" +
+                        "German Language: \n" +
+                        "src/main/java/ec504Group3/Resource/GermanURL_List\n" +
+                        "src/main/java/ec504Group3/Resource/CheckFile/check-1.txt\n" +
+                        "\n" +
+                        "French Language:\n" +
+                        "src/main/java/ec504Group3/Resource/FrenchURL_List\n" +
+                        "src/main/java/ec504Group3/Resource/CheckFile/check-2.txt\n" +
+                        "\n" +
+                        "Spanish Language:\n" +
+                        "src/main/java/ec504Group3/Resource/SpanishURL_List\n" +
+                        "src/main/java/ec504Group3/Resource/CheckFile/check-3.txt\n");
             }
         });
 

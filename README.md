@@ -4,7 +4,9 @@ This project is to find the suspicious word or phrase in the whole text. There a
 
 “Checker” is to detect the suspicious phrase and sentences and difference value through comparing the difference between suspicious phrases and corresponding similar phrases in template.
 
-Excluded minimum requirements, there are some other possible features we can add into this project: Graphical User Interface Suggest reasonable corrections to suspicious phrases Crawl social media posts. Allow human assessment of suspicious samples and non-trivially feed them back into the system. Extend to a language in which none of the team members have fluency.
+Excluded minimum requirements, there are some other possible features we can add into this project: 
+- Graphical User Interface for the input and result. 
+- Except English, extend to 3 languages in which none of the team members have fluency(German, Spanish, French).
 
 ## Group Members
 
@@ -33,7 +35,7 @@ For each URL, use crawler fetch the corresponding web content into local file, a
 
 For every word in sentences,  it is assigned in accordance with its syntactic functions. We call them part of speech (pos). Even though the same word, it may have different syntactic functions. For example, the word "fall" may act like a verb means move downward and also it could act like a noun with the same meaning as "autunm". That is to say, the we should consider both the POS and the word itself. Hence we should standardize the word with the word and its POS.
 
-The tokenzier should standerlize the input with:
+The tokenzier should standardize the input with:
 
 - Part of Speech (POS)
 - Word
@@ -79,9 +81,9 @@ The file data content is transferred to token information using API. Then each t
 
 ### Graph User Interface:
 
-![image](img/UI.png)
+![image](img/ui.png)
 
-![image](img/UI2.png)
+![image](img/ui2.png)
 
 GUI now is currently online.
 
@@ -101,9 +103,9 @@ Three language detect options are offered in our project. For each language we s
 
         - Use login name as "root" and password as "" to login.
 
-        - After logged in, add three new graphs named "english", "german", "french" in graph page, with edge definition as "freqs", from collection as "words" and to coleection as "words".
+        - After logged in, add 4 new graphs named "english", "german", "french", "spanish" in graph page, with edge definition as "freqs", from collection as "words" and to coleection as "words".
         NOTICE： This step is important because our code need to find the corresponding graphs. Press GRAPHS button on web console and then click on 'Add grpah' icon. Your configuration should like below:
-        "english" for english dictionary, "french" for french dictionary, "german" for german dictionary.
+        "english" for english dictionary, "french" for french dictionary, "german" for german dictionary,"spanish" for spanish dictionarys.
         
 ![image](img/db.png)
 
@@ -115,18 +117,19 @@ Three language detect options are offered in our project. For each language we s
 
 - After choosing a specific language, you need to enter in legal input into two text fields below which are "crawler URL List file" and "checker file".
 
-- Currently legal input is like "src/main/java/ec504Group3/Resource/EnglishURL_List" and "src/main/java/ec504Group3/Resource/CheckFile/check-0.txt".
-
-    You can use the files in following directory in the project, make sure you input the absolute paths of them:
+- You can use the files in following directory in the project, make sure you input the absolute paths of them:
    - English Language:
      - src/main/java/ec504Group3/Resource/EnglishURL_List
      - src/main/java/ec504Group3/Resource/CheckFile/check-0.txt
-   - German Language: (Language we don't know)
+   - German Language: 
      - src/main/java/ec504Group3/Resource/GermanURL_List
      - src/main/java/ec504Group3/Resource/CheckFile/check-1.txt
-   - French Language: (Language we don't know)
+   - French Language:
      - src/main/java/ec504Group3/Resource/FrenchURL_List
      - src/main/java/ec504Group3/Resource/CheckFile/check-2.txt
+   - Spanish Language:
+     - src/main/java/ec504Group3/Resource/SpanishURL_List
+     - src/main/java/ec504Group3/Resource/CheckFile/check-3.txt
 
 
 - After typing in the legal file path, you could click the button "enter" or you could press button "reset" to re-type the file path. (Database setup is required)
@@ -174,7 +177,7 @@ Design the project structure and coordinate between each part of project with co
 - Worked on Tokenizer: Learning Stanford CoreNLP API and deployed its environment using Maven. 
 - Successfully developed tokenizer that support German, French(which none of the team members have fluency), and English.
 - GUI improvement and core algorithm connection: Using Swing UI Designer to optimize the appearance of the GUI, and connect it to the core algorithm we built by receiving input and show output. 
-- Build German database
+- Built German and Spanish database.
 
 #### Ganghao Li:
 - Design the basic Crawler to extract all the contents from a URL.
@@ -189,6 +192,6 @@ Design the project structure and coordinate between each part of project with co
 
 ### Yuan Wei
 - standardize the word and part of speech in class named `TokenType.class`.
-- implements Crawler URL-Search, makes our crawler able to generater URL from a given URL. 
+- implements Crawler URL-Search, makes our crawler able to generator URL from a given URL. 
 - Designs and implements the Graph interface so that the user could use it for test in a easier way.
 - Build the Main Structure of Readme.md document

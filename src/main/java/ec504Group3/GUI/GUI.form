@@ -141,20 +141,31 @@
               <margin top="10" left="10" bottom="10" right="10"/>
               <opaque value="true"/>
               <rows value="0"/>
-              <text value="Waiting for inputs in the correct format, e.g.:&#10;&#10;Input PATH OF FILE OF URLs like this:&#10;/PATH/TO/URL-list&#10;&#10;Input PATH OF FILE TO CHECK like this:&#10;/PATH/TO/check.txt&#10;&#10;You can use the links as follows.&#10;&#10;English Language:&#10;src/main/java/ec504Group3/Resource/EnglishURL_List&#10;src/main/java/ec504Group3/Resource/CheckFile/check-0.txt&#10;&#10;German Language: (Language we don't know)&#10;src/main/java/ec504Group3/Resource/GermanURL_List&#10;src/main/java/ec504Group3/Resource/CheckFile/check-1.txt&#10;&#10;French Language: (Language we don't know)&#10;src/main/java/ec504Group3/Resource/FrenchURL_List&#10;src/main/java/ec504Group3/Resource/CheckFile/check-2.txt"/>
+              <text value="Waiting for inputs in the correct format, e.g.:&#10;&#10;Input PATH OF FILE OF URLs like this:&#10;/PATH/TO/URL-list&#10;&#10;Input PATH OF FILE TO CHECK like this:&#10;/PATH/TO/check.txt&#10;&#10;You can use the files in following directory in the project, make sure you input the absolute paths of them:&#10;&#10;English Language:&#10;src/main/java/ec504Group3/Resource/EnglishURL_List&#10;src/main/java/ec504Group3/Resource/CheckFile/check-0.txt&#10;&#10;German Language: &#10;src/main/java/ec504Group3/Resource/GermanURL_List&#10;src/main/java/ec504Group3/Resource/CheckFile/check-1.txt&#10;&#10;French Language:&#10;src/main/java/ec504Group3/Resource/FrenchURL_List&#10;src/main/java/ec504Group3/Resource/CheckFile/check-2.txt&#10;&#10;Spanish Language:&#10;src/main/java/ec504Group3/Resource/SpanishURL_List&#10;src/main/java/ec504Group3/Resource/CheckFile/check-3.txt&#10;"/>
               <wrapStyleWord value="true"/>
             </properties>
           </component>
         </children>
       </scrollpane>
-      <component id="b8aec" class="javax.swing.JRadioButton" binding="GermanButton">
+      <component id="dee67" class="javax.swing.JRadioButton" binding="GermanButton">
         <constraints>
-          <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-1"/>
           <foreground color="-13738565"/>
           <text value="German"/>
+          <verticalAlignment value="3"/>
+        </properties>
+      </component>
+      <component id="f4d4e" class="javax.swing.JRadioButton" binding="SpanishButton">
+        <constraints>
+          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1"/>
+          <foreground color="-13738565"/>
+          <text value="Spanish"/>
           <verticalAlignment value="3"/>
         </properties>
       </component>
@@ -168,6 +179,10 @@
       <member id="dc00f"/>
       <member id="14fec"/>
       <member id="b8aec"/>
+      <member id="305b2"/>
+      <member id="f4869"/>
+      <member id="dee67"/>
+      <member id="f4d4e"/>
     </group>
   </buttonGroups>
 </form>

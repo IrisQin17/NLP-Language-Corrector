@@ -37,6 +37,11 @@ public class ScoreChecker{
                         to = frenchDatabase.getDatabase().getNode(token.get(i+1).pos);
                         e = frenchDatabase.getDatabase().getEdge(from,to);
                         break;
+                    case "spanish":
+                        from = spanishDatabase.getDatabase().getNode(token.get(i).pos);
+                        to = spanishDatabase.getDatabase().getNode(token.get(i+1).pos);
+                        e = spanishDatabase.getDatabase().getEdge(from,to);
+                        break;
                     default:
                         from = englishDatabase.getDatabase().getNode(token.get(i).pos);
                         to = englishDatabase.getDatabase().getNode(token.get(i+1).pos);

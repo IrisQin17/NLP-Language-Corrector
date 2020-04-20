@@ -11,7 +11,7 @@ public class test {
         GUI gui = new GUI();
         gui.run();
 //        URLListCreater uc = new URLListCreater();
-//        URL url = new URL("https://www.bild.de/news/inland/news-inland/coronavirus-bewegungsradar-als-interaktive-karte-wie-bewegt-sich-deutschland-69598262.bild.html");
+//        URL url = new URL("https://elpais.com/america/");
 //        uc.create(url);
     }
 }

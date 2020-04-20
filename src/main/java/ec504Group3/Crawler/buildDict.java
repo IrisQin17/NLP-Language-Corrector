@@ -36,6 +36,7 @@ public class buildDict {
                     switch (mode){
                         case "german": germanDatabase.getDatabase().EdgePutin(token.get(i).pos,token.get(i+1).pos); break;
                         case "french": frenchDatabase.getDatabase().EdgePutin(token.get(i).pos,token.get(i+1).pos); break;
+                        case "spanish": spanishDatabase.getDatabase().EdgePutin(token.get(i).pos,token.get(i+1).pos); break;
                         default: englishDatabase.getDatabase().EdgePutin(token.get(i).pos,token.get(i+1).pos);break;
                     }
 
