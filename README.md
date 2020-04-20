@@ -104,6 +104,8 @@ Three language detect options are offered in our project. For each language we s
         - After logged in, add three new graphs named "english", "german", "french" in graph page, with edge definition as "freqs", from collection as "words" and to coleection as "words".
         NOTICE： This step is important because our code need to find the corresponding graphs. Press GRAPHS button on web console and then click on 'Add grpah' icon. Your configuration should like below:
         "english" for english dictionary, "french" for french dictionary, "german" for german dictionary.
+        
+![image](img/db.png)
 
     - Currently GUI window is used and is successfully combined with our core algorithm and structure
 
@@ -115,7 +117,7 @@ Three language detect options are offered in our project. For each language we s
 
     - Currently legal input is like "src/main/java/ec504Group3/Resource/EnglishURL_List" and "src/main/java/ec504Group3/Resource/CheckFile/check-0.txt".
     
-        You can use the links as follows.
+        You can use the files in following directory in the project, make sure you input the absolute paths of them:
        - English Language:
          - src/main/java/ec504Group3/Resource/EnglishURL_List
          - src/main/java/ec504Group3/Resource/CheckFile/check-0.txt
