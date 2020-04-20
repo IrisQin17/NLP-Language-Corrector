@@ -102,6 +102,8 @@ Three language detect options are offered in our project. For each language we s
         - Use login name as "root" and password as "" to login.
 
         - After logged in, add three new graphs named "english", "german", "french" in graph page, with edge definition as "freqs", from collection as "words" and to coleection as "words".
+        NOTICE： This step is important because our code need to find the corresponding graphs. Press GRAPHS button on web console and then click on 'Add grpah' icon. Your configuration should like below:
+        "english" for english dictionary, "french" for french dictionary, "german" for german dictionary.
 
     - Currently GUI window is used and is successfully combined with our core algorithm and structure
 
@@ -111,7 +113,7 @@ Three language detect options are offered in our project. For each language we s
 
     - After choosing a specific language, you need to enter in legal input into two text fields below which are "crawler URL List file" and "checker file".
 
-    - Currently legal input is like "src/main/java/ec504Group3/Resource/URL-list" and "external/taggers/input/english-input.txt".
+    - Currently legal input is like "src/main/java/ec504Group3/Resource/EnglishURL_List" and "src/main/java/ec504Group3/Resource/CheckFile/check-0.txt".
     
         You can use the links as follows.
        - English Language:
