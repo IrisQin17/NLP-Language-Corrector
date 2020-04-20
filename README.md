@@ -44,7 +44,7 @@ In our project, we created a class named "tokenType" which contains the elements
 
 All of our results is store in a List `List<List<tokenType>> result`
 
-For now, we support German, French(which none of the team members have fluency),and English.
+For now, we support German, French, Spanish(3 languages which none of the team members have fluency),and English.
 
 ### Database:
 Software Tool: Open-source Database ArangoDB which supports the functions of creating and maintaining a directed graph based data collections inside.
@@ -175,7 +175,7 @@ Design the project structure and coordinate between each part of project with co
 
 #### Bowen Qin:
 - Worked on Tokenizer: Learning Stanford CoreNLP API and deployed its environment using Maven. 
-- Successfully developed tokenizer that support German, French(which none of the team members have fluency), and English.
+- Successfully developed tokenizer that support German, French, Spanish, and English.
 - GUI improvement and core algorithm connection: Using Swing UI Designer to optimize the appearance of the GUI, and connect it to the core algorithm we built by receiving input and show output. 
 - Built German and Spanish database.
 
