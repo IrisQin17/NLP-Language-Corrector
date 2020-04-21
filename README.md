@@ -4,7 +4,9 @@ This project is to find the suspicious word or phrase in the whole text. There a
 
 “Checker” is to detect the suspicious phrase and sentences and difference value through comparing the difference between suspicious phrases and corresponding similar phrases in template.
 
-Excluded minimum requirements, there are some other possible features we can add into this project: 
+Features in our project includes:
+- A web crawler that search for all the Web URL and add them to file.
+- A graph database storing the relationship in form of token captaining words and its part of speech.
 - Graphical User Interface for the input and result. 
 - Except English, extend to 3 languages in which none of the team members have fluency(German, Spanish, French).
 
