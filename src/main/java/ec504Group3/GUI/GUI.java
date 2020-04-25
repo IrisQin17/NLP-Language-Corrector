@@ -25,10 +25,10 @@ public class GUI {
     private ButtonGroup LanguageSelect;
     private MaxentTagger languageTagger;
     private String LanguageMode;
-    public static MaxentTagger englishTagger = new MaxentTagger("external/taggers/models/english-bidirectional-distsim.tagger");
-    public static MaxentTagger germanTagger = new MaxentTagger("external/taggers/models/german-fast.tagger");
-    public static MaxentTagger frenchTagger = new MaxentTagger("external/taggers/models/french.tagger");
-    public static MaxentTagger spanishTagger = new MaxentTagger("external/taggers/models/spanish-ud.tagger");
+    private static MaxentTagger englishTagger = new MaxentTagger("external/taggers/models/english-bidirectional-distsim.tagger");
+    private static MaxentTagger germanTagger = new MaxentTagger("external/taggers/models/german-fast.tagger");
+    private static MaxentTagger frenchTagger = new MaxentTagger("external/taggers/models/french.tagger");
+    private static MaxentTagger spanishTagger = new MaxentTagger("external/taggers/models/spanish-ud.tagger");
 
 
     public GUI(){

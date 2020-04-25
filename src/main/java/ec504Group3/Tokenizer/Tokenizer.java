@@ -31,7 +31,7 @@ public class Tokenizer {
           continue;
         String[] underscoreSplit = tagger.tagTokenizedString(w.word()).replaceAll("-", "").replaceAll("``", "ZT").split("[_ ]");
 
-        System.out.println(tagger.tagTokenizedString(w.word()));
+//        System.out.println(tagger.tagTokenizedString(w.word()));
 
         try {
           tSentence.add(new TokenType(underscoreSplit[1], underscoreSplit[0]));
@@ -45,16 +45,18 @@ public class Tokenizer {
   }
 
 
+  public static MaxentTagger englishTagger = new MaxentTagger("external/taggers/models/english-bidirectional-distsim.tagger");
 
-//  // example of how to use
-//  public static void main (String[] args) throws Exception {
-//    List<List<TokenType>> lists = getTokens(englishTagger,"external/taggers/input/english-input.txt");
-//
-//    // print out for test
-//    for (List<TokenType> l : lists) {
-//      for (TokenType t : l)
-//        System.out.print(t.word + ": " + t.pos + " ");
-//      System.out.println();
-//    }
-//  }
+  // example of how to use
+  public static void main (String[] args) throws Exception {
+
+    List<List<TokenType>> lists = getTokens(englishTagger,"external/taggers/input/english-input.txt");
+
+    // print out for test
+    for (List<TokenType> l : lists) {
+      for (TokenType t : l)
+        System.out.print(t.word + ": " + t.pos + " ");
+      System.out.println();
+    }
+  }
 }
