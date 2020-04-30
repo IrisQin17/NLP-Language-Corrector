@@ -1,4 +1,4 @@
-# Documentation
+# NLP Language Corrector
 ## Problem Description
 This project is to find the suspicious word or phrase in the whole text. There are two main parts, “Crawler” and “Checker”. “Crawler” is a function to read the correct text (at most 1GB) and store the common usage patterns of words and phrases as the template.
 
