@@ -192,7 +192,7 @@ Design the project structure and coordinate between each part of project with co
 - Discussion with teammates about algorithm design
 - Stanford NLP API research
 
-### Yuan Wei
+#### Yuan Wei
 - standardize the word and part of speech in class named `TokenType.class`.
 - implements Crawler URL-Search, makes our crawler able to generator URL from a given URL. 
 - Designs and implements the Graph interface so that the user could use it for test in a easier way.
